@@ -1,6 +1,6 @@
 import StoriesOverlay from "./StoriesOverlay";
 import React from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet } from "react-native";
 import {
   NativeBaseProvider,
   Container,
