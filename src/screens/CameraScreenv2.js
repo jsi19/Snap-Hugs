@@ -182,14 +182,16 @@ const styles = StyleSheet.create({
     position: "relative",
     justifyContent: "center",
     alignItems: "center",
-    flex: 1,
+    flex: 0,
+    marginLeft: -30,
     width: 500,
     height: 780,
+    // width: 500,
+    // height: 780,
   },
 
   isRecording: {
     marginTop: -5,
-    // marginLeft: -5,
     opacity: 0.4,
   },
 

@@ -17,8 +17,8 @@ const styles = StyleSheet.create({
   sticker: {
     // position: "fixed",
     // zIndex: 10,
-    top: "80%",
-    left: "20%",
+    top: -700,
+    // right: 120,
     width: 367,
     height: 60,
   },
