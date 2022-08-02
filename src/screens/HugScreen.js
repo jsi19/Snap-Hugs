@@ -109,6 +109,24 @@ export default function HugScreen({ navigation }) {
               <Image source={require("../../assets/event_map.png")}/>
             </Center>
           </Container>
+
+          {/* Community Partners section */}
+          <Container style={styles.stories_partners}>
+            <Text bold fontSize="lg" color="white">
+              Community Partners
+            </Text>
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+              <HStack space={3} justifyContent="center">
+                <TouchableOpacity onPress={() => {navigation.navigate("Partner");}}>
+                  <Center h="140" w="140" bg="light.300" rounded="2xl" />
+                </TouchableOpacity>
+                <Center h="140" w="140" bg="light.300" rounded="2xl" />
+                <Center h="140" w="140" bg="light.300" rounded="2xl" />
+                <Center h="140" w="140" bg="light.300" rounded="2xl" />
+              </HStack>
+            </ScrollView>
+          </Container>
+
         </ScrollView>
       </NativeBaseProvider>
     );
