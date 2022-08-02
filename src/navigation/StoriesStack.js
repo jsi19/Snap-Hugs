@@ -14,8 +14,6 @@ import { getAuth, signOut } from "firebase/auth";
 
 // Screens
 import StoriesScreen from "../screens/StoriesScreen";
-import HugScreen from "../screens/HugScreen";
-import PartnerScreen from "../screens/PartnerScreen";
 
 // Stacks
 import HugStack from "./HugStack";
