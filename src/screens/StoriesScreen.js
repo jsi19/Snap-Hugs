@@ -47,7 +47,7 @@ export default function StoriesScreen({ navigation }) {
               <VStack space={3} justifyContent="center">
                 <Pressable
                   onPress={() => {
-                    navigation.navigate("Hug");
+                    navigation.navigate("HugStack");
                   }}
                 >
                   <Center h="60" w="330" bg="light.300" rounded="2xl" />

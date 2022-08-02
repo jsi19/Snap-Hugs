@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
 import GestureRecognizer from "react-native-swipe-gestures";
 import Modal from "react-native-modal";
 import {
@@ -21,25 +21,32 @@ import {
 import StoriesOverlay from "./StoriesOverlay";
 import PartnerScreen from "./PartnerScreen";
 
-export default function HugScreen() {
+var height = Dimensions.get('window').height;
+var width = Dimensions.get('window').width;
+
+export default function HugScreen({ navigation }) {
     return (
       <NativeBaseProvider>
         {/* ScrollView enables scrolling. Scroll bar indicator is turned off */}
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <ScrollView style = {styles.hug_layout} showsVerticalScrollIndicator={false}>
+
           {/* Logo Image of Hug Community */}
-          <Container>
-            <Heading h="250" w="415" bg="light.300" />
-          </Container>
+          <View>
+            <Image style = {styles.logo} bg="light.300" source={require("../../assets/hug_logo.png")}/>
+            {/* <Heading h="250" w="415" bg="light.300" /> */}
+          </View>
+
           {/* Learn More Button */}
           <Container style={styles.learnMoreButtonSection}>
             <Button style={styles.learnMoreButton} bg ="black" rounded="3xl">
               Learn More
             </Button>
           </Container>
+
           {/* Career Stories section */}
           <Container style={styles.stories_partners}>
-            <Text bold fontSize="md">
-              Career Stories
+            <Text bold fontSize="md" color="white">
+              Industry Insights
             </Text>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
               <HStack space={3} justifyContent="center">
@@ -57,25 +64,38 @@ export default function HugScreen() {
   
           {/* Partner section */}
           <Container style={styles.stories_partners}>
-            <Text bold fontSize="md">
-              Partners
+            <Text bold fontSize="md" color="white">
+              Get Involved(Community Partners)
             </Text>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
               <HStack space={3} justifyContent="center">
-                <Center h="190" w="150" bg="light.300" rounded="2xl">
-                  <PartnerScreen/>
-                </Center>
-                <Center h="190" w="150" bg="light.300" rounded="2xl" />
-                <Center h="190" w="150" bg="light.300" rounded="2xl" />
-                <Center h="190" w="150" bg="light.300" rounded="2xl" />
-                <Center h="190" w="150" bg="light.300" rounded="2xl" />
+                <VStack space={3} justifyContent="center">
+                  <TouchableOpacity onPress={() => {navigation.navigate("Partner");}}>
+                    <Center h="60" w="395" bg="light.300" rounded="2xl" />
+                  </TouchableOpacity>
+                  <Center h="60" w="395" bg="light.300" rounded="2xl" />
+                  <Center h="60" w="395" bg="light.300" rounded="2xl" />
+                </VStack>
+                <VStack space={3} justifyContent="center">
+                  <Center h="60" w="395" bg="light.300" rounded="2xl" />
+                  <Center h="60" w="395" bg="light.300" rounded="2xl" />
+                  <Center h="60" w="395" bg="light.300" rounded="2xl" />
+                </VStack>
               </HStack>
             </ScrollView>
           </Container>
-  
+
+          {/* Beta Testing section */}
+          <Container style={styles.stories_partners} justifyContent="center">
+            <Text bold fontSize="md" color="white">
+              Beta Testing
+            </Text>
+            <Center h="190" w="150" bg="light.300" rounded="2xl" />
+          </Container>
+          
           {/* Event Map section */}
           <Container style={styles.stories_partners} justifyContent="center">
-            <Text bold fontSize="md">
+            <Text bold fontSize="md" color="white">
               Event Map
             </Text>
             <Center  justifyContent="center" rounded="2xl">
@@ -88,6 +108,16 @@ export default function HugScreen() {
   }
 
   const styles = StyleSheet.create({
+
+    hug_layout: {
+      backgroundColor: "black",
+    },
+
+    logo: {
+      minWidth: '100%',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
 
     stories_partners: {
       margin: 16,
@@ -112,5 +142,7 @@ export default function HugScreen() {
       textAlignVertical: 'center',
       justifyContent: 'center',
       alignSelf: "center",
+      borderWidth: 1,
+      borderColor:"white",
     },
   });
