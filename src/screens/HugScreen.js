@@ -65,23 +65,21 @@ export default function HugScreen({ navigation }) {
           {/* Partner section */}
           <Container style={styles.stories_partners}>
             <Text bold fontSize="md" color="white">
-              Community Partners
+              Get Involved(Community Partners)
             </Text>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
               <HStack space={3} justifyContent="center">
                 <VStack space={3} justifyContent="center">
-                <TouchableOpacity onPress={() => {navigation.navigate("Partner");}}>
+                  <TouchableOpacity onPress={() => {navigation.navigate("Partner");}}>
+                    <Center h="60" w="395" bg="light.300" rounded="2xl" />
+                  </TouchableOpacity>
                   <Center h="60" w="395" bg="light.300" rounded="2xl" />
-                </TouchableOpacity>
-                <Center h="60" w="395" bg="light.300" rounded="2xl" />
-                <Center h="60" w="395" bg="light.300" rounded="2xl" />
+                  <Center h="60" w="395" bg="light.300" rounded="2xl" />
                 </VStack>
                 <VStack space={3} justifyContent="center">
-                <TouchableOpacity onPress={() => {navigation.navigate("Partner");}}>
                   <Center h="60" w="395" bg="light.300" rounded="2xl" />
-                </TouchableOpacity>
-                <Center h="60" w="395" bg="light.300" rounded="2xl" />
-                <Center h="60" w="395" bg="light.300" rounded="2xl" />
+                  <Center h="60" w="395" bg="light.300" rounded="2xl" />
+                  <Center h="60" w="395" bg="light.300" rounded="2xl" />
                 </VStack>
               </HStack>
             </ScrollView>

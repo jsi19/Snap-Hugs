@@ -1,6 +1,6 @@
 import StoriesOverlay from "./StoriesOverlay";
 import React from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet } from "react-native";
 import {
   NativeBaseProvider,
   Container,
@@ -10,6 +10,7 @@ import {
   Text,
   Circle,
   ScrollView,
+  Pressable,
 } from "native-base";
 
 export default function StoriesScreen({ navigation }) {
@@ -44,9 +45,13 @@ export default function StoriesScreen({ navigation }) {
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <HStack space={9}>
               <VStack space={3} justifyContent="center">
-              <TouchableOpacity onPress={() => {navigation.navigate("HugStack");}}>
-                <Center h="60" w="330" bg="light.300" rounded="2xl" />
-              </TouchableOpacity>
+                <Pressable
+                  onPress={() => {
+                    navigation.navigate("HugStack");
+                  }}
+                >
+                  <Center h="60" w="330" bg="light.300" rounded="2xl" />
+                </Pressable>
                 <Center h="60" w="330" bg="light.300" rounded="2xl" />
                 <Center h="60" w="330" bg="light.300" rounded="2xl" />
               </VStack>
