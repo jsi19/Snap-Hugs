@@ -3,14 +3,21 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { StyleSheet, Text, View, TouchableOpacity, Image, Button } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  Button,
+} from "react-native";
 import {
   HeaderButtons,
   HeaderButton,
   Item,
   HiddenItem,
   OverflowMenu,
-} from 'react-navigation-header-buttons';
+} from "react-navigation-header-buttons";
 import CustomHeaderButton from "../components/CustomHeaderButton";
 
 import { getAuth, signOut } from "firebase/auth";
@@ -18,6 +25,7 @@ import { getAuth, signOut } from "firebase/auth";
 // Screens
 import MapScreen from "../screens/MapScreen";
 import CameraScreen from "../screens/CameraScreen";
+import CameraScreenv2 from "../screens/CameraScreen";
 import StoriesScreen from "../screens/StoriesScreen";
 import SpotlightScreen from "../screens/SpotlightScreen";
 import HugScreen from "../screens/HugScreen";
@@ -36,7 +44,8 @@ export default function UserStack() {
     tabBarShowLabel: false,
     headerLeft: () => (
       <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <TouchableOpacity style={styles.nav_icon} 
+        <TouchableOpacity
+          style={styles.nav_icon}
           onPress={() => {
             signOut(auth)
               .then(() => {
@@ -47,27 +56,41 @@ export default function UserStack() {
                 // An error happened.
                 // should we do something with that error??
               });
-          }}>
-          <Image source={require("../../assets/top_nav_bar/avatar.png")}/>
+          }}
+        >
+          <Image source={require("../../assets/top_nav_bar/avatar.png")} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.nav_icon} onPress={()=>{alert("Search!")}}>
-          <Image source={require("../../assets/top_nav_bar/search.png")}/>
-        </TouchableOpacity>
-      </HeaderButtons>
-    ),
-    
-    headerRight: () => (
-      <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <TouchableOpacity style={styles.nav_icon} onPress={()=>{alert("Add friend")}}>
-          <Image source={require("../../assets/top_nav_bar/add_friend.png")}/>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.nav_icon} onPress={()=>{alert("More!")}}>
-          <Image source={require("../../assets/top_nav_bar/more.png")}/>
+        <TouchableOpacity
+          style={styles.nav_icon}
+          onPress={() => {
+            alert("Search!");
+          }}
+        >
+          <Image source={require("../../assets/top_nav_bar/search.png")} />
         </TouchableOpacity>
       </HeaderButtons>
-      
     ),
 
+    headerRight: () => (
+      <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+        <TouchableOpacity
+          style={styles.nav_icon}
+          onPress={() => {
+            alert("Add friend");
+          }}
+        >
+          <Image source={require("../../assets/top_nav_bar/add_friend.png")} />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.nav_icon}
+          onPress={() => {
+            alert("More!");
+          }}
+        >
+          <Image source={require("../../assets/top_nav_bar/more.png")} />
+        </TouchableOpacity>
+      </HeaderButtons>
+    ),
   };
 
   return (
@@ -75,7 +98,7 @@ export default function UserStack() {
       <Tab.Navigator
         activeColor="#f0edf6"
         inactiveColor="#3e2465"
-        barStyle={{ backgroundColor: '#694fad' }}
+        barStyle={{ backgroundColor: "#694fad" }}
         initialRouteName="Camera"
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, size }) => {
@@ -89,7 +112,9 @@ export default function UserStack() {
               iconName = "ios-chatbox-outline";
               iconColor = focused ? "#2b83b3" : "grey";
             } else if (route.name === "Camera") {
-              iconName = focused ? "ios-scan-circle-outline" : "ios-camera-outline";
+              iconName = focused
+                ? "ios-scan-circle-outline"
+                : "ios-camera-outline";
               iconColor = focused ? "yellow" : "grey";
             } else if (route.name === "StoriesStack") {
               iconName = "ios-people-outline";
@@ -103,14 +128,26 @@ export default function UserStack() {
           tabBarStyle: { backgroundColor: "#000" },
         })}
       >
-        <Tab.Screen name="Map" component={MapScreen} options={{...screenOptions, headerShown: false}} />
-        <Tab.Screen name="ChatStack" component={ChatStack} options={{ headerShown: false, tabBarShowLabel: false }} />
+        <Tab.Screen
+          name="Map"
+          component={MapScreen}
+          options={{ ...screenOptions, headerShown: false }}
+        />
+        <Tab.Screen
+          name="ChatStack"
+          component={ChatStack}
+          options={{ headerShown: false, tabBarShowLabel: false }}
+        />
         <Tab.Screen
           name="Camera"
-          component={CameraScreen}
-          options={{...screenOptions, headerShown: false}} 
+          component={CameraScreenv2}
+          options={{ ...screenOptions, headerShown: false }}
         />
-        <Tab.Screen name="StoriesStack" component={StoriesStack} options={{ headerShown: false, tabBarShowLabel: false }}/>
+        <Tab.Screen
+          name="StoriesStack"
+          component={StoriesStack}
+          options={{ headerShown: false, tabBarShowLabel: false }}
+        />
         <Tab.Screen
           name="Spotlight"
           component={SpotlightScreen}
@@ -124,9 +161,9 @@ export default function UserStack() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
   nav_icon: {
     borderRadius: 10,
