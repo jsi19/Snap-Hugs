@@ -12,6 +12,7 @@ import { Video } from "expo-av";
 import { shareAsync } from "expo-sharing";
 import * as MediaLibrary from "expo-media-library";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import Sticker from "../components/StickerComponent";
 
 export default function App() {
   let cameraRef = useRef();
@@ -84,7 +85,7 @@ export default function App() {
 
     // Put this into its own screen/component. Need to change bottom nav and add icons to the image
     return (
-      <SafeAreaView>
+      <SafeAreaView style={styles.videoPlaybackContainer}>
         <Video
           style={styles.videoPlayback}
           source={{ uri: video.uri }}
@@ -98,6 +99,7 @@ export default function App() {
           ) : undefined}
           <Button title="Discard" onPress={() => setVideo(undefined)} />
         </View>
+        <Sticker />
       </SafeAreaView>
     );
   }
@@ -173,15 +175,23 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
+  videoPlaybackContainer: { position: "relative" },
+
   videoPlayback: {
-    alignSelf: "center",
+    // alignSelf: "center",
+    position: "relative",
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 0,
+    marginLeft: -30,
     width: 500,
     height: 780,
+    // width: 500,
+    // height: 780,
   },
 
   isRecording: {
     marginTop: -5,
-    // marginLeft: -5,
     opacity: 0.4,
   },
 
