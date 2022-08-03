@@ -15,10 +15,7 @@ export default function Sticker() {
 
 const styles = StyleSheet.create({
   sticker: {
-    // position: "fixed",
-    // zIndex: 10,
     top: -700,
-    // right: 120,
     width: 367,
     height: 60,
   },
