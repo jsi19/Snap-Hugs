@@ -52,7 +52,7 @@ export default function HugScreen({ navigation }) {
               Stories
             </Text>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-              <HStack space={3} justifyContent="center">
+              <HStack space={3} justifyContent="center" marginTop={2}>
                 <Circle size="74px" bg="light.300">
                   <StoriesOverlay />
                 </Circle>
@@ -71,7 +71,7 @@ export default function HugScreen({ navigation }) {
               Industry Insights
             </Text>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-              <HStack space={3} justifyContent="center">
+              <HStack space={3} justifyContent="center" marginTop={2}>
                 <Center h="170" w="170" bg="light.300" rounded="2xl" />
                 <Center h="170" w="170" bg="light.300" rounded="2xl" />
                 <Center h="170" w="170" bg="light.300" rounded="2xl" />
@@ -79,14 +79,46 @@ export default function HugScreen({ navigation }) {
               </HStack>
             </ScrollView>
           </Container>
+
+          {/* Community Partners section */}
+          <Container style={styles.stories_partners}>
+            <Text bold fontSize="lg" color="white">
+              Community Partners
+            </Text>
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+              <HStack space={3} justifyContent="center" marginTop={2}>
+                <TouchableOpacity onPress={() => {navigation.navigate("Partner");}}>
+                  <Center h="140" w="140" bg="light.300" rounded="2xl" />
+                </TouchableOpacity>
+                <Center h="140" w="140" bg="light.300" rounded="2xl" />
+                <Center h="140" w="140" bg="light.300" rounded="2xl" />
+                <Center h="140" w="140" bg="light.300" rounded="2xl" />
+              </HStack>
+            </ScrollView>
+          </Container>
+
+          {/* Beta Testing section */}
+          <Container style={styles.stories_partners} justifyContent="center">
+            <Text bold fontSize="lg" color="white">
+              Beta Testing
+            </Text>
+            <Container style={styles.learnMoreButtonSection}>
+              <Button style={styles.betaTestButton} bg ="black" rounded="xl">
+                <Text bold fontSize="md" color="white">
+                  Try Ghost!
+                </Text>
+              </Button>
+            </Container>
+            {/* <Center h="190" w="150" bg="light.300" rounded="2xl" /> */}
+          </Container>
   
-          {/* Partner section */}
+          {/* Get Involved section
           <Container style={styles.stories_partners}>
             <Text bold fontSize="lg" color="white">
               Get Involved
             </Text>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-              <HStack space={3} justifyContent="center">
+              <HStack space={3} justifyContent="center" marginTop={2}>
                 <VStack space={3} justifyContent="center">
                   <TouchableOpacity onPress={() => {navigation.navigate("Partner");}}>
                     <Center style = {styles.event}>
@@ -105,22 +137,7 @@ export default function HugScreen({ navigation }) {
                 </VStack>
               </HStack>
             </ScrollView>
-          </Container>
-
-          {/* Beta Testing section */}
-          <Container style={styles.stories_partners} justifyContent="center">
-            <Text bold fontSize="md" color="white">
-              Beta Testing
-            </Text>
-            <Container style={styles.learnMoreButtonSection}>
-              <Button style={styles.betaTestButton} bg ="black" rounded="xl">
-                <Text bold fontSize="md" color="white">
-                  Try Ghost!
-                </Text>
-              </Button>
-            </Container>
-            {/* <Center h="190" w="150" bg="light.300" rounded="2xl" /> */}
-          </Container>
+          </Container> */}
           
           {/* Event Map section
           <Container style={styles.eventMapSection}>
@@ -131,23 +148,6 @@ export default function HugScreen({ navigation }) {
               <Image source={require("../../assets/event_map.png")}/>
             </Center>
           </Container> */}
-
-          {/* Community Partners section */}
-          <Container style={styles.stories_partners}>
-            <Text bold fontSize="lg" color="white">
-              Community Partners
-            </Text>
-            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-              <HStack space={3} justifyContent="center">
-                <TouchableOpacity onPress={() => {navigation.navigate("Partner");}}>
-                  <Center h="140" w="140" bg="light.300" rounded="2xl" />
-                </TouchableOpacity>
-                <Center h="140" w="140" bg="light.300" rounded="2xl" />
-                <Center h="140" w="140" bg="light.300" rounded="2xl" />
-                <Center h="140" w="140" bg="light.300" rounded="2xl" />
-              </HStack>
-            </ScrollView>
-          </Container>
 
         </ScrollView>
       </NativeBaseProvider>
@@ -185,7 +185,6 @@ export default function HugScreen({ navigation }) {
     },
 
     stories_partners: {
-      margin: 16,
       minWidth: '100%',
       padding: 10,
       marginLeft:0
@@ -196,6 +195,7 @@ export default function HugScreen({ navigation }) {
       justifyContent: 'center',
       alignItems: 'center',
       padding: 10,
+      marginTop: 16,
    },
 
    learnMoreButton: {
