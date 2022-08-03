@@ -29,7 +29,7 @@ export default function StoriesScreen({ navigation }) {
             <HStack space={3} justifyContent="center">
               <Circle size="74px" bg="light.300">
                 <StoriesOverlay
-                  source={bertrandVideo}
+                  source={vanessaVideo}
                   displayName="Vanessa Malabanan"
                   title="A Day in the Life"
                 />

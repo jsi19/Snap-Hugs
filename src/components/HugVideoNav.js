@@ -47,6 +47,6 @@ const styles = StyleSheet.create({
   },
 
   modalNavRightSide: {
-    marginLeft: 140,
+    marginLeft: "auto",
   },
 });
