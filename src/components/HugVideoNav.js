@@ -9,7 +9,7 @@ export default function HugVideoNav(props) {
   return (
     <HStack style={styles.modalNav}>
       <HStack space={4} alignItems="center">
-        <Pressable onPress={() => setModalVisible(false)}>
+        <Pressable onPress={props.onPress}>
           <Image source={carrot} alt="carrot"></Image>
         </Pressable>
         <Divider thickness="2" orientation="vertical" />

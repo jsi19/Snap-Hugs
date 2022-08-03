@@ -11,12 +11,13 @@ export default function StoriesOverlay(props) {
   // Set modal visibility
   const [isModalVisible, setModalVisible] = useState(false);
 
+  const hideModal = () => {
+    setModalVisible(false);
+  };
+
   return (
     // Dismiss modal/overlay on swipe up
-    <GestureRecognizer
-      style={{ flex: 1 }}
-      onSwipeUp={() => setModalVisible(false)}
-    >
+    <GestureRecognizer style={{ flex: 1 }} onSwipeUp={hideModal}>
       <Pressable onPress={() => setModalVisible(true)}>
         <Circle size="74px" opacity={0} />
       </Pressable>
@@ -29,12 +30,13 @@ export default function StoriesOverlay(props) {
         backdropTransitionOutTiming={0}
       >
         <View style={styles.modalView}>
-          <HugVideoNav displayName={props.displayName} title={props.title} />
+          <HugVideoNav
+            displayName={props.displayName}
+            title={props.title}
+            onPress={hideModal}
+          />
           <VideoComponent style={styles.video} source={props.source} />
-          <Pressable
-            style={styles.modalMoreButton}
-            onPress={() => setModalVisible(false)}
-          >
+          <Pressable style={styles.modalMoreButton} onPress={hideModal}>
             <Center h="35" w="70" bg="white" rounded="3xl">
               <Text bold fontSize="sm">
                 More
