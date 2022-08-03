@@ -23,11 +23,11 @@ export default function HugVideoNav(props) {
         </VStack>
       </HStack>
 
-      <HStack style={styles.modalNavRightSide} space={5}>
-        <Pressable onPress={() => setModalVisible(false)}>
+      <HStack style={styles.modalNavRightSide} space={2}>
+        <Pressable onPress={props.onPress}>
           <Image source={bookmark} alt="bookmark"></Image>
         </Pressable>
-        <Pressable onPress={() => setModalVisible(false)}>
+        <Pressable onPress={props.onPress}>
           <Image source={threeDots} alt="menu"></Image>
         </Pressable>
       </HStack>

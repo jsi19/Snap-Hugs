@@ -64,7 +64,7 @@ export default function HugScreen({ navigation }) {
                 <StoriesOverlay
                   source={bertrandVideo}
                   displayName="Bertrand Saint-Preux"
-                  title="Product Manager at Snap
+                  title="Product Manager for Snap's Inclusive Camera
                   "
                 />
               </Circle>
