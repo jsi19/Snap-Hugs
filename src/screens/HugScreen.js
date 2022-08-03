@@ -49,7 +49,7 @@ export default function HugScreen({ navigation }) {
           {/* Career Stories section */}
           <Container style={styles.stories_partners}>
             <Text bold fontSize="lg" color="white">
-              Industry Insights
+              Stories
             </Text>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
               <HStack space={3} justifyContent="center">
@@ -61,6 +61,21 @@ export default function HugScreen({ navigation }) {
                 <Circle size="74px" bg="light.300" />
                 <Circle size="74px" bg="light.300" />
                 <Circle size="74px" bg="light.300" />
+              </HStack>
+            </ScrollView>
+          </Container>
+
+          {/* Industry Insights section */}
+          <Container style={styles.stories_partners}>
+            <Text bold fontSize="lg" color="white">
+              Industry Insights
+            </Text>
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+              <HStack space={3} justifyContent="center">
+                <Center h="170" w="170" bg="light.300" rounded="2xl" />
+                <Center h="170" w="170" bg="light.300" rounded="2xl" />
+                <Center h="170" w="170" bg="light.300" rounded="2xl" />
+                <Center h="170" w="170" bg="light.300" rounded="2xl" />
               </HStack>
             </ScrollView>
           </Container>
@@ -97,10 +112,17 @@ export default function HugScreen({ navigation }) {
             <Text bold fontSize="md" color="white">
               Beta Testing
             </Text>
+            <Container style={styles.learnMoreButtonSection}>
+              <Button style={styles.betaTestButton} bg ="black" rounded="xl">
+                <Text bold fontSize="md" color="white">
+                  Try Ghost!
+                </Text>
+              </Button>
+            </Container>
             {/* <Center h="190" w="150" bg="light.300" rounded="2xl" /> */}
           </Container>
           
-          {/* Event Map section */}
+          {/* Event Map section
           <Container style={styles.eventMapSection}>
             <Text bold fontSize="md" color="white">
               Event Map
@@ -108,7 +130,7 @@ export default function HugScreen({ navigation }) {
             <Center alignSelf="center" rounded="2xl">
               <Image source={require("../../assets/event_map.png")}/>
             </Center>
-          </Container>
+          </Container> */}
 
           {/* Community Partners section */}
           <Container style={styles.stories_partners}>
@@ -175,15 +197,24 @@ export default function HugScreen({ navigation }) {
       alignItems: 'center',
       padding: 10,
    },
+
+   learnMoreButton: {
+    textAlignVertical: 'center',
+    justifyContent: 'center',
+    alignSelf: "center",
+    borderWidth: 1,
+    borderColor:"white",
+  },
   
-    eventMapSection: {
-      margin: 16,
-      minWidth: '100%',
-      padding: 10,
-      marginLeft:0
-    },
+    // eventMapSection: {
+    //   margin: 16,
+    //   minWidth: '100%',
+    //   padding: 10,
+    //   marginLeft:0
+    // },
   
-    learnMoreButton: {
+    betaTestButton: {
+      width: 200,
       textAlignVertical: 'center',
       justifyContent: 'center',
       alignSelf: "center",
