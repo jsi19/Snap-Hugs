@@ -1,5 +1,5 @@
 import vanessaVideo from "../../assets/video/vanessa_test.mp4";
-// import bertrandVideo from "../../assets/video/bertrandVideo.mp4";
+import bertrandVideo from "../../assets/video/bertrandVideo.mp4";
 import StoriesOverlay from "./StoriesOverlay";
 import React from "react";
 import { StyleSheet } from "react-native";
@@ -29,7 +29,7 @@ export default function StoriesScreen({ navigation }) {
             <HStack space={3} justifyContent="center">
               <Circle size="74px" bg="light.300">
                 <StoriesOverlay
-                  source={vanessaVideo}
+                  source={bertrandVideo}
                   displayName="Vanessa Malabanan"
                   title="A Day in the Life"
                 />
