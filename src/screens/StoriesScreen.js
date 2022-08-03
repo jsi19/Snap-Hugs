@@ -1,4 +1,3 @@
-import vanessaVideo from "../../assets/video/vanessa_test.mp4";
 import StoriesOverlay from "./StoriesOverlay";
 import React from "react";
 import { StyleSheet } from "react-native";
