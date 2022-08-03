@@ -1,3 +1,4 @@
+import vanessaVideo from "../../assets/video/vanessa_test.mp4";
 import carrot from "../../assets/stories-nav-bar/down_carrot.png";
 import bookmark from "../../assets/stories-nav-bar/charm_bookmark.png";
 import threeDots from "../../assets/stories-nav-bar/bi_three-dots-vertical.png";
@@ -68,7 +69,7 @@ export default function StoriesOverlay() {
           </HStack>
 
           {/* Video Component */}
-          <VideoComponent />
+          <VideoComponent style={styles.video} videoFile={vanessaVideo} />
 
           {/* More Button */}
           <Pressable
@@ -108,6 +109,13 @@ const styles = StyleSheet.create({
 
   modalNavRightSide: {
     marginLeft: 140,
+  },
+
+  video: {
+    alignSelf: "center",
+    marginTop: 10,
+    width: 500,
+    height: 760,
   },
 
   modalMoreButton: {
