@@ -25,12 +25,14 @@ export default function PartnerScreen() {
 //   }
 
   return (
-	<SafeAreaView>
-		<ScrollView style = {{backgroundColor: "1E1E1E"}}>
-			<Image sytle = {styles.logo} bg="light.300" source={require("../../assets/exp_logo.png")}/>
-			<Image bg="light.300" source={require("../../assets/exp_data.png")}/>
+	<NativeBaseProvider>
+		<ScrollView style = {{backgroundColor: "1E1E1E"}} alignItems="center" backgroundColor="black">
+			<VStack justifyContent="center">
+				<Image style = {styles.logo} bg="light.300" source={require("../../assets/exp_logo.png")}/>
+				<Image bg="light.300" source={require("../../assets/exp_data.png")}/>
+			</VStack>
 		</ScrollView>
-	</SafeAreaView>
+	</NativeBaseProvider>
 	
 	// <NativeBaseProvider>
 	//   <ScrollView contentContainerStyle={styles.container} w="100%">
