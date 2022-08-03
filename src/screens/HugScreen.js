@@ -4,6 +4,7 @@ import GestureRecognizer from "react-native-swipe-gestures";
 import Modal from "react-native-modal";
 import {
   NativeBaseProvider,
+  ChevronRightIcon,
   Container,
   Center,
   VStack,
@@ -39,13 +40,15 @@ export default function HugScreen({ navigation }) {
           {/* Learn More Button */}
           <Container style={styles.learnMoreButtonSection}>
             <Button style={styles.learnMoreButton} bg ="black" rounded="3xl">
-              Learn More
+              <Text bold fontSize="md" color="white">
+                Learn More
+              </Text>
             </Button>
           </Container>
 
           {/* Career Stories section */}
           <Container style={styles.stories_partners}>
-            <Text bold fontSize="md" color="white">
+            <Text bold fontSize="lg" color="white">
               Industry Insights
             </Text>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -64,22 +67,26 @@ export default function HugScreen({ navigation }) {
   
           {/* Partner section */}
           <Container style={styles.stories_partners}>
-            <Text bold fontSize="md" color="white">
-              Get Involved(Community Partners)
+            <Text bold fontSize="lg" color="white">
+              Get Involved
             </Text>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
               <HStack space={3} justifyContent="center">
                 <VStack space={3} justifyContent="center">
                   <TouchableOpacity onPress={() => {navigation.navigate("Partner");}}>
-                    <Center h="60" w="395" bg="light.300" rounded="2xl" />
+                    <Center style = {styles.event}>
+                      <Text bold fontSize="md" color="white"> Example </Text>
+                      <ChevronRightIcon size="5" color="white"/>
+                    </Center>
                   </TouchableOpacity>
-                  <Center h="60" w="395" bg="light.300" rounded="2xl" />
-                  <Center h="60" w="395" bg="light.300" rounded="2xl" />
-                </VStack>
-                <VStack space={3} justifyContent="center">
-                  <Center h="60" w="395" bg="light.300" rounded="2xl" />
-                  <Center h="60" w="395" bg="light.300" rounded="2xl" />
-                  <Center h="60" w="395" bg="light.300" rounded="2xl" />
+                  <Center style = {styles.event}>
+                    <Text bold fontSize="md" color="white"> Example </Text>
+                    <ChevronRightIcon size="5" color="white"/>
+                  </Center>
+                  <Center style = {styles.event}>
+                      <Text bold fontSize="md" color="white"> Example </Text>
+                      <ChevronRightIcon size="5" color="white"/>
+                    </Center>
                 </VStack>
               </HStack>
             </ScrollView>
@@ -90,24 +97,60 @@ export default function HugScreen({ navigation }) {
             <Text bold fontSize="md" color="white">
               Beta Testing
             </Text>
-            <Center h="190" w="150" bg="light.300" rounded="2xl" />
+            {/* <Center h="190" w="150" bg="light.300" rounded="2xl" /> */}
           </Container>
           
           {/* Event Map section */}
-          <Container style={styles.stories_partners} justifyContent="center">
+          <Container style={styles.eventMapSection}>
             <Text bold fontSize="md" color="white">
               Event Map
             </Text>
-            <Center  justifyContent="center" rounded="2xl">
+            <Center alignSelf="center" rounded="2xl">
               <Image source={require("../../assets/event_map.png")}/>
             </Center>
           </Container>
+
+          {/* Community Partners section */}
+          <Container style={styles.stories_partners}>
+            <Text bold fontSize="lg" color="white">
+              Community Partners
+            </Text>
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+              <HStack space={3} justifyContent="center">
+                <TouchableOpacity onPress={() => {navigation.navigate("Partner");}}>
+                  <Center h="140" w="140" bg="light.300" rounded="2xl" />
+                </TouchableOpacity>
+                <Center h="140" w="140" bg="light.300" rounded="2xl" />
+                <Center h="140" w="140" bg="light.300" rounded="2xl" />
+                <Center h="140" w="140" bg="light.300" rounded="2xl" />
+              </HStack>
+            </ScrollView>
+          </Container>
+
         </ScrollView>
       </NativeBaseProvider>
     );
   }
+  const icons = [{
+    icon: <ChevronRightIcon />,
+    iconName: "chevron-right"
+  },]
+
 
   const styles = StyleSheet.create({
+    event: {
+      height: 50,
+      width: 380,
+      bg:"black",
+      rounded:"2xl",
+      borderWidth:"2",
+      borderColor:"white",
+      borderRadius: "10px",
+      flexDirection: "row",
+      paddingTop : 10,
+      paddingBottom : 10,
+      justifyContent : "space-between"
+    },
 
     hug_layout: {
       backgroundColor: "black",
@@ -122,6 +165,8 @@ export default function HugScreen({ navigation }) {
     stories_partners: {
       margin: 16,
       minWidth: '100%',
+      padding: 10,
+      marginLeft:0
     },
   
     learnMoreButtonSection: {
@@ -134,8 +179,8 @@ export default function HugScreen({ navigation }) {
     eventMapSection: {
       margin: 16,
       minWidth: '100%',
-      alignItems: 'center',
       padding: 10,
+      marginLeft:0
     },
   
     learnMoreButton: {

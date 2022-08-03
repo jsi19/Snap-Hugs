@@ -13,6 +13,7 @@ import CustomHeaderButton from "../components/CustomHeaderButton";
 import { getAuth, signOut } from "firebase/auth";
 
 // Screens
+import SnapHugsScreen from "../screens/SnapHugsScreen";
 import HugScreen from "../screens/HugScreen";
 import PartnerScreen from "../screens/PartnerScreen";
 
@@ -104,11 +105,11 @@ export default function HugStack({ navigation }) {
 
   return (
     <Stack.Navigator>
-      {/* <Stack.Screen
-        name="Stories"
-        component={StoriesScreen}
+      <Stack.Screen
+        name="Snap Hugs"
+        component={SnapHugsScreen}
         options={screenOptions}
-      /> */}
+      />
        <Stack.Screen
         name="Hug"
         component={HugScreen}
