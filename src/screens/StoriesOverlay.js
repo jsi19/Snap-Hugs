@@ -1,34 +1,23 @@
-import vanessaVideo from "../../assets/video/vanessa_test.mp4";
-import carrot from "../../assets/stories-nav-bar/down_carrot.png";
-import bookmark from "../../assets/stories-nav-bar/charm_bookmark.png";
-import threeDots from "../../assets/stories-nav-bar/bi_three-dots-vertical.png";
 import VideoComponent from "../components/VideoComponent";
 import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
 import GestureRecognizer from "react-native-swipe-gestures";
 import Modal from "react-native-modal";
+import HugVideoNav from "../components/HugVideoNav";
 
-import {
-  Center,
-  VStack,
-  HStack,
-  Text,
-  Circle,
-  Pressable,
-  Image,
-  Divider,
-} from "native-base";
+import { Center, Text, Circle, Pressable } from "native-base";
 
-export default function StoriesOverlay() {
+export default function StoriesOverlay(props) {
   // Set modal visibility
   const [isModalVisible, setModalVisible] = useState(false);
 
+  const hideModal = () => {
+    setModalVisible(false);
+  };
+
   return (
     // Dismiss modal/overlay on swipe up
-    <GestureRecognizer
-      style={{ flex: 1 }}
-      onSwipeUp={() => setModalVisible(false)}
-    >
+    <GestureRecognizer style={{ flex: 1 }} onSwipeUp={hideModal}>
       <Pressable onPress={() => setModalVisible(true)}>
         <Circle size="74px" opacity={0} />
       </Pressable>
@@ -41,41 +30,13 @@ export default function StoriesOverlay() {
         backdropTransitionOutTiming={0}
       >
         <View style={styles.modalView}>
-          {/* Modal Nav Bar */}
-          <HStack style={styles.modalNav}>
-            <HStack space={4} alignItems="center">
-              <Pressable onPress={() => setModalVisible(false)}>
-                <Image source={carrot} alt="carrot"></Image>
-              </Pressable>
-              <Divider thickness="2" orientation="vertical" />
-              <VStack>
-                <Text style={styles.modalViewText} bold fontSize="xs">
-                  Insert Name Here
-                </Text>
-                <Text style={styles.modalViewText} fontSize="xs">
-                  Title
-                </Text>
-              </VStack>
-            </HStack>
-
-            <HStack style={styles.modalNavRightSide} space={5}>
-              <Pressable onPress={() => setModalVisible(false)}>
-                <Image source={bookmark} alt="bookmark"></Image>
-              </Pressable>
-              <Pressable onPress={() => setModalVisible(false)}>
-                <Image source={threeDots} alt="menu"></Image>
-              </Pressable>
-            </HStack>
-          </HStack>
-
-          {/* Video Component */}
-          <VideoComponent style={styles.video} source={vanessaVideo} />
-
-          {/* More Button */}
-          <Pressable
-            style={styles.modalMoreButton}
-            onPress={() => setModalVisible(false)}
-          >
+          <HugVideoNav
+            displayName={props.displayName}
+            title={props.title}
+            onPress={hideModal}
+          />
+          <VideoComponent style={styles.video} source={props.source} />
+          <Pressable style={styles.modalMoreButton} onPress={hideModal}>
             <Center h="35" w="70" bg="white" rounded="3xl">
               <Text bold fontSize="sm">
                 More
@@ -95,20 +56,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignSelf: "center",
     backgroundColor: "#000",
-  },
-
-  modalViewText: {
-    color: "#fff",
-  },
-
-  modalNav: {
-    height: 40,
-    marginLeft: 16,
-    marginTop: 60,
-  },
-
-  modalNavRightSide: {
-    marginLeft: 140,
   },
 
   video: {
