@@ -15,10 +15,10 @@ export default function HugVideoNav(props) {
         <Divider thickness="2" orientation="vertical" />
         <VStack>
           <Text style={styles.modalViewText} bold fontSize="xs">
-            {props.displayName}
+            {props.longName}
           </Text>
           <Text style={styles.modalViewText} fontSize="xs">
-            {props.title}
+            {props.videoTitle}
           </Text>
         </VStack>
       </HStack>

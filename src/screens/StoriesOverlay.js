@@ -31,11 +31,15 @@ export default function StoriesOverlay(props) {
       >
         <View style={styles.modalView}>
           <HugVideoNav
-            displayName={props.displayName}
-            title={props.title}
+            shortName={props.shortName}
+            longName={props.longName}
+            videoTitle={props.videoTitle}
             onPress={hideModal}
           />
-          <VideoComponent style={styles.video} source={props.source} />
+          <VideoComponent
+            style={styles.video}
+            videoSource={props.videoSource}
+          />
           <Pressable style={styles.modalMoreButton} onPress={hideModal}>
             <Center h="35" w="70" bg="white" rounded="3xl">
               <Text bold fontSize="sm">
