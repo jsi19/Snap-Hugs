@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import {
   NativeBaseProvider,
   Container,
@@ -10,7 +10,9 @@ import {
   Circle,
   ScrollView,
   Pressable,
+  Image,
 } from "native-base";
+import { useHandler } from 'react-native-reanimated';
 
 export default function SnapHugsScreen({ navigation }) {
   return (
@@ -25,19 +27,22 @@ export default function SnapHugsScreen({ navigation }) {
           </Text>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <VStack space={6} alignItems="center">
-              <Pressable
-                onPress={() => {
-                  navigation.navigate("Hug");
-                }}
-              >
-                <Center h="79" w="370" bg="light.300" rounded="2xl" />
-              </Pressable>
-              <Center h="79" w="370" bg="light.300" rounded="2xl" />
-              <Center h="79" w="370" bg="light.300" rounded="2xl" />
-              <Center h="79" w="370" bg="light.300" rounded="2xl" />
-              <Center h="79" w="370" bg="light.300" rounded="2xl" />
-              <Center h="79" w="370" bg="light.300" rounded="2xl" />
-              <Center h="79" w="370" bg="light.300" rounded="2xl" />
+              {/* {
+              HugList.map((hug) =>
+              <TouchableOpacity onPress={() => {navigation.navigate("Hug");}}>
+                <Text>{hug.image}</Text>
+                <Image style = {styles.logo} source={require(hug.image)}/>
+              </TouchableOpacity>
+              )} */}
+
+              <TouchableOpacity onPress={() => {navigation.navigate("Hug");}}>
+                <Image style = {styles.logo} source={require("../../assets/hug_list/technology.png")}/>
+              </TouchableOpacity>
+              <Image style = {styles.logo} source={require("../../assets/hug_list/activism.png")}/>
+              <Image style = {styles.logo} source={require("../../assets/hug_list/engineering.png")}/>
+              <Image style = {styles.logo} source={require("../../assets/hug_list/healthcare.png")}/>
+              <Image style = {styles.logo} source={require("../../assets/hug_list/finance.png")}/>
+              <Image style = {styles.logo} source={require("../../assets/hug_list/energy.png")}/>
             </VStack>
           </ScrollView>
         </Center>
