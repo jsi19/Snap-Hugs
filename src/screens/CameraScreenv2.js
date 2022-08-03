@@ -8,11 +8,11 @@ import {
 } from "react-native";
 import { useEffect, useState, useRef } from "react";
 import { Camera, CameraType } from "expo-camera";
-import { Video } from "expo-av";
 import { shareAsync } from "expo-sharing";
 import * as MediaLibrary from "expo-media-library";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import Sticker from "../components/StickerComponent";
+import VideoComponent from "../components/VideoComponent";
 
 export default function App() {
   let cameraRef = useRef();
@@ -86,11 +86,9 @@ export default function App() {
     // Put this into its own screen/component. Need to change bottom nav and add icons to the image
     return (
       <SafeAreaView style={styles.videoPlaybackContainer}>
-        <Video
+        <VideoComponent
           style={styles.videoPlayback}
           source={{ uri: video.uri }}
-          shouldPlay
-          isLooping
         />
         <View style={styles.recordingOptions}>
           <Button title="Share" onPress={shareVideo} />
@@ -183,11 +181,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     flex: 0,
-    marginLeft: -30,
+    marginLeft: -35,
     width: 500,
     height: 780,
-    // width: 500,
-    // height: 780,
   },
 
   isRecording: {

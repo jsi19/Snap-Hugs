@@ -69,7 +69,7 @@ export default function StoriesOverlay() {
           </HStack>
 
           {/* Video Component */}
-          <VideoComponent style={styles.video} videoFile={vanessaVideo} />
+          <VideoComponent style={styles.video} source={vanessaVideo} />
 
           {/* More Button */}
           <Pressable
