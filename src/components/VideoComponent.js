@@ -15,7 +15,7 @@ export default function VideoComponent(props) {
       <Video
         ref={video}
         style={props.style}
-        source={props.source}
+        source={props.videoSource}
         shouldPlay
         isLooping
         onPlaybackStatusUpdate={(status) => setStatus(() => status)}

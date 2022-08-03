@@ -1,8 +1,10 @@
+import bertrandImg from "../../assets/profile_images/bertrand.png";
 import bertrandVideo from "../../assets/video/bertrandVideo.mp4";
 import React, { useState } from "react";
 import { View, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
 import GestureRecognizer from "react-native-swipe-gestures";
 import Modal from "react-native-modal";
+import StoryComponent from "../components/StoryComponent";
 import {
   NativeBaseProvider,
   ChevronRightIcon,
@@ -60,14 +62,14 @@ export default function HugScreen({ navigation }) {
           </Text>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <HStack space={3} justifyContent="center">
-              <Circle size="74px" bg="light.300">
-                <StoriesOverlay
-                  source={bertrandVideo}
-                  displayName="Bertrand Saint-Preux"
-                  title="Product Manager for Snap's Inclusive Camera
-                  "
-                />
-              </Circle>
+              <StoryComponent
+                imageSource={bertrandImg}
+                videoSource={bertrandVideo}
+                shortName="Bertrand S"
+                longName="Bertrand Saint-Preux"
+                videoTitle="Product Manager for Snap's Inclusive Camera"
+              />
+
               <Circle size="74px" bg="light.300" />
               <Circle size="74px" bg="light.300" />
               <Circle size="74px" bg="light.300" />
