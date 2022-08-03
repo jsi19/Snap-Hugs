@@ -10,7 +10,6 @@ import {
   OverflowMenu,
 } from 'react-navigation-header-buttons';
 import CustomHeaderButton from "../components/CustomHeaderButton";
-import { getAuth, signOut } from "firebase/auth";
 
 // Screens
 import SnapHugsScreen from "../screens/SnapHugsScreen";
@@ -20,38 +19,19 @@ import PartnerScreen from "../screens/PartnerScreen";
 const Stack = createStackNavigator();
 
 export default function HugStack({ navigation }) {
-  const auth = getAuth();
-  const user = auth.currentUser;
-  
-  let screenOptions = {
+
+  let HugListTopNav = {
     tabBarShowLabel: false,
     headerLeft: () => (
       <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <TouchableOpacity style={styles.nav_icon} 
-          onPress={() => {
-            signOut(auth)
-              .then(() => {
-                // Sign-out successful.
-                user = null;
-              })
-              .catch((error) => {
-                // An error happened.
-                // should we do something with that error??
-              });
-          }}>
-          <Image source={require("../../assets/top_nav_bar/avatar.png")}/>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.nav_icon} onPress={()=>{alert("Search!")}}>
-          <Image source={require("../../assets/top_nav_bar/search.png")}/>
+        <TouchableOpacity style={styles.nav_icon} onPress={() => {navigation.navigate("Stories");}}>
+          <Image source={require("../../assets/top_nav_bar/backButton.png")}/>
         </TouchableOpacity>
       </HeaderButtons>
     ),
     
     headerRight: () => (
       <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <TouchableOpacity style={styles.nav_icon} onPress={()=>{alert("Add friend")}}>
-          <Image source={require("../../assets/top_nav_bar/add_friend.png")}/>
-        </TouchableOpacity>
         <TouchableOpacity style={styles.nav_icon} onPress={()=>{alert("More!")}}>
           <Image source={require("../../assets/top_nav_bar/more.png")}/>
         </TouchableOpacity>
@@ -65,7 +45,7 @@ export default function HugStack({ navigation }) {
     tabBarShowLabel: false,
     headerLeft: () => (
       <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <TouchableOpacity style={styles.nav_icon} onPress={() => {navigation.navigate("Stories");}}>
+        <TouchableOpacity style={styles.nav_icon} onPress={() => {navigation.navigate("Snap Hugs");}}>
           <Image source={require("../../assets/top_nav_bar/backButton.png")}/>
         </TouchableOpacity>
       </HeaderButtons>
@@ -108,7 +88,7 @@ export default function HugStack({ navigation }) {
       <Stack.Screen
         name="Snap Hugs"
         component={SnapHugsScreen}
-        options={screenOptions}
+        options={HugListTopNav}
       />
        <Stack.Screen
         name="Hug"
