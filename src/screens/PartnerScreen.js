@@ -30,7 +30,7 @@ export default function PartnerScreen() {
 	<NativeBaseProvider>
 		<ScrollView>
 		<View style={{width: 420, height: 1200, alignSelf: "center"}} >
-			<Image style= {{flex:1 , width: undefined, height: undefined}}    
+			<Image alt="PartnerExp" style= {{flex:1 , width: undefined, height: undefined}}    
 			source={require("../../assets/exp.png")}
 				/>
 		</View>
