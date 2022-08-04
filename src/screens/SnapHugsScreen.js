@@ -22,7 +22,7 @@ export default function SnapHugsScreen({ navigation }) {
 
         {/* About Hugs section */}
         <Center style = {styles.game_mini}>
-          <Image h="100%" w="400" source={require("../../assets/hug_list/about_hug.png")}/>
+          <Image h="100%" w="400" source={require("../../assets/hug_list/about_hug.png")} alt="About Hug"/>
         </Center>
 
         {/* Hug Communities section */}
@@ -32,22 +32,14 @@ export default function SnapHugsScreen({ navigation }) {
           </Text>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <VStack space={6} alignItems="center">
-              {/* {
-              HugList.map((hug) =>
               <TouchableOpacity onPress={() => {navigation.navigate("Hug");}}>
-                <Text>{hug.image}</Text>
-                <Image style = {styles.logo} source={require(hug.image)}/>
+                <Image h="86" w="367" source={require("../../assets/hug_list/technology.png")} alt="Hug Community 1" />
               </TouchableOpacity>
-              )} */}
-
-              <TouchableOpacity onPress={() => {navigation.navigate("Hug");}}>
-                <Image h="86" w="367" source={require("../../assets/hug_list/technology.png")}/>
-              </TouchableOpacity>
-              <Image h="86" w="367" source={require("../../assets/hug_list/activism.png")}/>
-              <Image h="86" w="367" source={require("../../assets/hug_list/engineering.png")}/>
-              <Image h="86" w="367" source={require("../../assets/hug_list/healthcare.png")}/>
-              <Image h="86" w="367" source={require("../../assets/hug_list/finance.png")}/>
-              <Image h="86" w="367" source={require("../../assets/hug_list/energy.png")}/>
+              <Image h="86" w="367" flexDirection='row' justifyContent="center" alignItems="center" source={require("../../assets/hug_list/activism.png")} alt="Hug Community 2"/>
+              <Image h="86" w="367" source={require("../../assets/hug_list/engineering.png")} alt="Hug Community 3"/>
+              <Image h="86" w="367" source={require("../../assets/hug_list/healthcare.png")} alt="Hug Community 4"/>
+              <Image h="86" w="367" source={require("../../assets/hug_list/finance.png")} alt="Hug Community 5"/>
+              <Image h="86" w="367" source={require("../../assets/hug_list/energy.png")} alt="Hug Community 6" />
             </VStack>
           </ScrollView>
         </Center>
