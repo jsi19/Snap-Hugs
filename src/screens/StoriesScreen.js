@@ -1,6 +1,18 @@
-import StoriesOverlay from "./StoriesOverlay";
+import friend1 from "../../assets/images/profile_images/friend1.png";
+import friend2 from "../../assets/images/profile_images/friend2.png";
+import friend3 from "../../assets/images/profile_images/friend3.png";
+import friend4 from "../../assets/images/profile_images/friend4.png";
+import friend5 from "../../assets/images/profile_images/friend5.png";
+import friend6 from "../../assets/images/profile_images/friend6.png";
+import hugsImg from "../../assets/images/snaphugs.png";
+import discover2 from "../../assets/images/discover_images/Discover2.png";
+import discover3 from "../../assets/images/discover_images/Discover3.png";
+import discover4 from "../../assets/images/discover_images/Discover4.png";
+
+import vanessaVideo from "../../assets/video/vanessa_test.mp4";
+import StoryComponent from "../components/StoryComponent";
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, ImageBackground } from "react-native";
 import {
   NativeBaseProvider,
   Container,
@@ -8,7 +20,7 @@ import {
   VStack,
   HStack,
   Text,
-  Circle,
+  Image,
   ScrollView,
   Pressable,
 } from "native-base";
@@ -25,14 +37,45 @@ export default function StoriesScreen({ navigation }) {
           </Text>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <HStack space={3} justifyContent="center">
-              <Circle size="74px" bg="light.300">
-                <StoriesOverlay />
-              </Circle>
-              <Circle size="74px" bg="light.300" />
-              <Circle size="74px" bg="light.300" />
-              <Circle size="74px" bg="light.300" />
-              <Circle size="74px" bg="light.300" />
-              <Circle size="74px" bg="light.300" />
+              <StoryComponent
+                imageSource={friend1}
+                videoSource={vanessaVideo}
+                shortName="Lois L"
+                longName="Lois Lovelace"
+                videoTitle="A Day in the Life"
+              />
+
+              <StoryComponent
+                imageSource={friend2}
+                shortName="Alvin"
+                longName="Alvin Castillo"
+                videoTitle="A Day in the Life"
+              />
+              <StoryComponent
+                imageSource={friend3}
+                shortName="Maria S"
+                longName="Maria Soltano"
+                videoTitle="A Day in the Life"
+              />
+              <StoryComponent
+                imageSource={friend4}
+                shortName="Julia J"
+                longName="Julia Jackson"
+                videoTitle="A Day in the Life"
+              />
+              <StoryComponent
+                imageSource={friend5}
+                shortName="Benny"
+                longName="Benny Harris"
+                videoTitle="A Day in the Life"
+              />
+
+              <StoryComponent
+                imageSource={friend6}
+                shortName="Aayansh"
+                longName="Aayansh Patel"
+                videoTitle="A Day in the Life"
+              />
             </HStack>
           </ScrollView>
         </Container>
@@ -42,27 +85,17 @@ export default function StoriesScreen({ navigation }) {
           <Text bold fontSize="md">
             HUGS
           </Text>
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            <HStack space={9}>
-              <VStack space={3} justifyContent="center">
-                <Pressable
-                  onPress={() => {
-                    navigation.navigate("HugStack");
-                  }}
-                >
-                  <Center h="60" w="330" bg="light.300" rounded="2xl" />
-                </Pressable>
-                <Center h="60" w="330" bg="light.300" rounded="2xl" />
-                <Center h="60" w="330" bg="light.300" rounded="2xl" />
-              </VStack>
-
-              <VStack space={3} justifyContent="center">
-                <Center h="60" w="330" bg="light.300" rounded="2xl" />
-                <Center h="60" w="330" bg="light.300" rounded="2xl" />
-                <Center h="60" w="330" bg="light.300" rounded="2xl" />
-              </VStack>
-            </HStack>
-          </ScrollView>
+          <Pressable
+            onPress={() => {
+              navigation.navigate("HugStack");
+            }}
+          >
+            <Image
+              source={hugsImg}
+              alt={"snap hugs logo"}
+              style={styles.hugsImg}
+            />
+          </Pressable>
         </Container>
 
         {/* Discover section */}
@@ -70,15 +103,31 @@ export default function StoriesScreen({ navigation }) {
           <Text bold fontSize="md">
             Discover
           </Text>
-          <VStack space={3}>
-            <HStack space={3}>
-              <Center h="263" w="177" bg="light.300" rounded="2xl" />
-              <Center h="263" w="177" bg="light.300" rounded="2xl" />
+          <VStack space={1}>
+            <HStack space={1}>
+              <Image
+                source={discover2}
+                alt={"discover story"}
+                style={styles.discoverImg}
+              />
+              <Image
+                source={discover3}
+                alt={"discover story"}
+                style={styles.discoverImg}
+              />
             </HStack>
 
-            <HStack space={3}>
-              <Center h="263" w="177" bg="light.300" rounded="2xl" />
-              <Center h="263" w="177" bg="light.300" rounded="2xl" />
+            <HStack space={1}>
+              <Image
+                source={discover4}
+                alt={"discover story"}
+                style={styles.discoverImg}
+              />
+              <Image
+                source={discover2}
+                alt={"discover story"}
+                style={styles.discoverImg}
+              />
             </HStack>
           </VStack>
         </Container>
@@ -98,7 +147,17 @@ const styles = StyleSheet.create({
     minWidth: 400,
   },
 
+  hugsImg: {
+    width: 382,
+    height: 183,
+  },
+
   discover: {
     margin: 16,
+  },
+
+  discoverImg: {
+    width: 189,
+    height: 281,
   },
 });

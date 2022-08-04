@@ -3,7 +3,7 @@ import bookmark from "../../assets/stories-nav-bar/charm_bookmark.png";
 import threeDots from "../../assets/stories-nav-bar/bi_three-dots-vertical.png";
 import VideoComponent from "../components/VideoComponent";
 import React, { useState } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 import GestureRecognizer from "react-native-swipe-gestures";
 import Modal from "react-native-modal";
 
@@ -33,9 +33,9 @@ export default function BetaTestingOverlay() {
       showsVerticalScrollIndicator={false}
     //   onSwipeUp={() => setModalVisible(false)}
     >
-      <Pressable onPress={() => setModalVisible(true)}>
-        <Circle size="74px" opacity={0} />
-      </Pressable>
+      <TouchableOpacity style={styles.beta_test} justifyContent="center" onPress={() => setModalVisible(true)} >
+        <Image h="180" w="380" source={require("../../assets/beta_test/beta_button.png")} />
+      </TouchableOpacity > 
       <Modal
         isVisible={isModalVisible}
         animationIn="slideInUp"
@@ -135,6 +135,11 @@ export default function BetaTestingOverlay() {
 }
 
 const styles = StyleSheet.create({
+    beta_test: {
+        minWidth: '100%',
+        padding: 10,
+        marginLeft: 0,
+      },
     game_mini_section: {
         flex: 6,
         minWidth: '100%',

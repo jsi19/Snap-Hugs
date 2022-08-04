@@ -1,7 +1,16 @@
+import bertrandImg from "../../assets/images/profile_images/bertrand.png";
+import bertrandVideo from "../../assets/video/bertrandVideo.mp4";
+import person2 from "../../assets/TechnologyHug/stories/career_story2.png";
+import person3 from "../../assets/TechnologyHug/stories/career_story3.png";
+import person4 from "../../assets/TechnologyHug/stories/career_story4.png";
+import person5 from "../../assets/TechnologyHug/stories/career_story5.png";
+
+
 import React, { useState } from "react";
 import { View, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
 import GestureRecognizer from "react-native-swipe-gestures";
 import Modal from "react-native-modal";
+import HugStoryComponent from "../components/StoryComponent";
 import {
   NativeBaseProvider,
   ChevronRightIcon,
@@ -17,15 +26,15 @@ import {
   ImageBackground,
   Divider,
   Heading,
-  Button
+  Button,
 } from "native-base";
 
 import StoriesOverlay from "./StoriesOverlay";
 import BetaTestingOverlay from "./BetaTestingOverlay";
 import PartnerScreen from "./PartnerScreen";
 
-var height = Dimensions.get('window').height;
-var width = Dimensions.get('window').width;
+var height = Dimensions.get("window").height;
+var width = Dimensions.get("window").width;
 
 export default function HugScreen({ navigation }) {
     return (
@@ -55,14 +64,37 @@ export default function HugScreen({ navigation }) {
             </Text>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
               <HStack space={3} justifyContent="center" marginTop={2}>
-                <Circle size="74px" bg="light.300">
-                  <StoriesOverlay />
-                </Circle>
-                <Circle size="74px" bg="light.300" />
-                <Circle size="74px" bg="light.300" />
-                <Circle size="74px" bg="light.300" />
-                <Circle size="74px" bg="light.300" />
-                <Circle size="74px" bg="light.300" />
+                <HugStoryComponent
+                  imageSource={bertrandImg}
+                  videoSource={bertrandVideo}
+                  shortName="Bertrand S"
+                  longName="Bertrand Saint-Preux"
+                  videoTitle="Product Manager for Snap's Inclusive Camera"
+                />
+                <HugStoryComponent
+                imageSource={person2}
+                shortName="Alvin"
+                longName="Alvin Castillo"
+                videoTitle="A Day in the Life"
+                />
+                <HugStoryComponent
+                imageSource={person3}
+                shortName="Alvin"
+                longName="Alvin Castillo"
+                videoTitle="A Day in the Life"
+                />
+                <HugStoryComponent
+                imageSource={person4}
+                shortName="Alvin"
+                longName="Alvin Castillo"
+                videoTitle="A Day in the Life"
+                />
+                <HugStoryComponent
+                imageSource={person5}
+                shortName="Alvin"
+                longName="Alvin Castillo"
+                videoTitle="A Day in the Life"
+                />
               </HStack>
             </ScrollView>
           </Container>
@@ -74,10 +106,15 @@ export default function HugScreen({ navigation }) {
             </Text>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
               <HStack space={3} justifyContent="center" marginTop={2}>
-                <Center h="170" w="170" bg="light.300" rounded="2xl" />
-                <Center h="170" w="170" bg="light.300" rounded="2xl" />
-                <Center h="170" w="170" bg="light.300" rounded="2xl" />
-                <Center h="170" w="170" bg="light.300" rounded="2xl" />
+                <Center h="170" w="170" bg="light.300" rounded="2xl">
+                  <Image h="173" w="173" source={require("../../assets/TechnologyHug/insights/insight1.png")}/>
+                </Center>
+                <Center h="170" w="170" bg="light.300" rounded="2xl">
+                  <Image h="170" w="170" source={require("../../assets/TechnologyHug/insights/insight2.png")}/>
+                </Center>
+                <Center h="170" w="170" bg="light.300" rounded="2xl">
+                  <Image h="170" w="170" source={require("../../assets/TechnologyHug/insights/insight3.png")}/>
+                </Center>
               </HStack>
             </ScrollView>
           </Container>
@@ -90,21 +127,23 @@ export default function HugScreen({ navigation }) {
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
               <HStack space={3} justifyContent="center" marginTop={2}>
                 <TouchableOpacity onPress={() => {navigation.navigate("Partner");}}>
-                  <Center h="140" w="140" bg="light.300" rounded="2xl" />
+                  <Center h="140" w="140" bg="light.300" rounded="2xl">
+                    <Image h="140" w="140" source={require("../../assets/TechnologyHug/partners/partner1.png")}/>
+                  </Center>
                 </TouchableOpacity>
-                <Center h="140" w="140" bg="light.300" rounded="2xl" />
-                <Center h="140" w="140" bg="light.300" rounded="2xl" />
-                <Center h="140" w="140" bg="light.300" rounded="2xl" />
+                <Center h="140" w="140" bg="light.300" rounded="2xl">
+                  <Image h="140" w="140" source={require("../../assets/TechnologyHug/partners/partner2.png")}/>
+                </Center>
+                <Center h="140" w="140" bg="light.300" rounded="2xl">
+                  <Image h="150" w="140" source={require("../../assets/TechnologyHug/partners/partner3.png")}/>
+                </Center>
               </HStack>
             </ScrollView>
           </Container>
 
          
           {/* Beta Testing section */}
-          <TouchableOpacity style={styles.beta_test} justifyContent="center">
-            <Image h="180" w="380" source={require("../../assets/beta_test/beta_button.png")} />
-            <BetaTestingOverlay/>
-          </TouchableOpacity > 
+          <BetaTestingOverlay/>
           {/* <Container style={styles.stories_partners} justifyContent="center">
             <Text bold fontSize="lg" color="white">
               Become a Beta Tester
@@ -142,7 +181,7 @@ export default function HugScreen({ navigation }) {
           {/* Event Map section
           <Container style={styles.eventMapSection}>
             <Text bold fontSize="md" color="white">
-              Event Map
+              Learn More
             </Text>
             <Center alignSelf="center" rounded="2xl">
               <Image source={require("../../assets/event_map.png")}/>

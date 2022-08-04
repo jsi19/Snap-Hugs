@@ -1,9 +1,8 @@
-import vanessaVideo from "../../assets/video/vanessa_test.mp4";
 import React, { useState, useEffect, useRef } from "react";
 import { View, StyleSheet } from "react-native";
 import { Video, Audio } from "expo-av";
 
-export default function VideoComponent() {
+export default function VideoComponent(props) {
   const video = useRef(null);
   const [status, setStatus] = useState({});
 
@@ -12,11 +11,11 @@ export default function VideoComponent() {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <View>
       <Video
         ref={video}
-        style={styles.video}
-        source={vanessaVideo}
+        style={props.style}
+        source={props.videoSource}
         shouldPlay
         isLooping
         onPlaybackStatusUpdate={(status) => setStatus(() => status)}
@@ -24,12 +23,3 @@ export default function VideoComponent() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  video: {
-    alignSelf: "center",
-    marginTop: 10,
-    width: 500,
-    height: 760,
-  },
-});
