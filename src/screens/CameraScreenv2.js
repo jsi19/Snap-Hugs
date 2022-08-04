@@ -83,12 +83,11 @@ export default function App() {
       });
     };
 
-    // Put this into its own screen/component. Need to change bottom nav and add icons to the image
     return (
       <SafeAreaView style={styles.videoPlaybackContainer}>
         <VideoComponent
           style={styles.videoPlayback}
-          source={{ uri: video.uri }}
+          videoSource={{ uri: video.uri }}
         />
         <View style={styles.recordingOptions}>
           <Button title="Share" onPress={shareVideo} />

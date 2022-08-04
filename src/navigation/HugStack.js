@@ -1,14 +1,26 @@
+import bitmoji from "../../assets/top_nav_bar/new_bitmoji.png";
+import search from "../../assets/top_nav_bar/new_search.png";
+import addFriend from "../../assets/top_nav_bar/new_addfriend.png";
+import more from "../../assets/top_nav_bar/new_more.png";
+
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import { StyleSheet, Text, View, TouchableOpacity, Image, Button } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  Button,
+} from "react-native";
 import {
   HeaderButtons,
   HeaderButton,
   Item,
   HiddenItem,
   OverflowMenu,
-} from 'react-navigation-header-buttons';
+} from "react-navigation-header-buttons";
 import CustomHeaderButton from "../components/CustomHeaderButton";
 import { getAuth, signOut } from "firebase/auth";
 
@@ -22,12 +34,12 @@ const Stack = createStackNavigator();
 export default function HugStack({ navigation }) {
   const auth = getAuth();
   const user = auth.currentUser;
-  
+
   let screenOptions = {
     tabBarShowLabel: false,
     headerLeft: () => (
       <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <TouchableOpacity style={styles.nav_icon} 
+        <TouchableOpacity
           onPress={() => {
             signOut(auth)
               .then(() => {
@@ -38,69 +50,102 @@ export default function HugStack({ navigation }) {
                 // An error happened.
                 // should we do something with that error??
               });
-          }}>
-          <Image source={require("../../assets/top_nav_bar/avatar.png")}/>
+          }}
+        >
+          <Image
+            source={bitmoji}
+            style={{ height: 46, width: 46, marginLeft: 10, marginRight: 4 }}
+          />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.nav_icon} onPress={()=>{alert("Search!")}}>
-          <Image source={require("../../assets/top_nav_bar/search.png")}/>
-        </TouchableOpacity>
-      </HeaderButtons>
-    ),
-    
-    headerRight: () => (
-      <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <TouchableOpacity style={styles.nav_icon} onPress={()=>{alert("Add friend")}}>
-          <Image source={require("../../assets/top_nav_bar/add_friend.png")}/>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.nav_icon} onPress={()=>{alert("More!")}}>
-          <Image source={require("../../assets/top_nav_bar/more.png")}/>
+        <TouchableOpacity
+          style={styles.nav_icon}
+          onPress={() => {
+            alert("Search!");
+          }}
+        >
+          <Image source={search} style={{ height: 40, width: 40 }} />
         </TouchableOpacity>
       </HeaderButtons>
-      
     ),
 
+    headerRight: () => (
+      <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+        <TouchableOpacity
+          style={styles.nav_icon}
+          onPress={() => {
+            alert("Add friend");
+          }}
+        >
+          <Image source={addFriend} style={{ height: 40, width: 40 }} />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.nav_icon}
+          onPress={() => {
+            alert("More!");
+          }}
+        >
+          <Image source={more} style={{ height: 40, width: 40 }} />
+        </TouchableOpacity>
+      </HeaderButtons>
+    ),
   };
 
   let HugTopNav = {
     tabBarShowLabel: false,
     headerLeft: () => (
       <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <TouchableOpacity style={styles.nav_icon} onPress={() => {navigation.navigate("Stories");}}>
-          <Image source={require("../../assets/top_nav_bar/backButton.png")}/>
+        <TouchableOpacity
+          style={styles.nav_icon}
+          onPress={() => {
+            navigation.navigate("Stories");
+          }}
+        >
+          <Image source={require("../../assets/top_nav_bar/backButton.png")} />
         </TouchableOpacity>
       </HeaderButtons>
-    ),
-    
-    headerRight: () => (
-      <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <TouchableOpacity style={styles.nav_icon} onPress={()=>{alert("More!")}}>
-          <Image source={require("../../assets/top_nav_bar/more.png")}/>
-        </TouchableOpacity>
-      </HeaderButtons>
-      
     ),
 
+    headerRight: () => (
+      <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+        <TouchableOpacity
+          style={styles.nav_icon}
+          onPress={() => {
+            alert("More!");
+          }}
+        >
+          <Image source={require("../../assets/top_nav_bar/more.png")} />
+        </TouchableOpacity>
+      </HeaderButtons>
+    ),
   };
 
   let PartnerTopNav = {
     tabBarShowLabel: false,
     headerLeft: () => (
       <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <TouchableOpacity style={styles.nav_icon} onPress={() => {navigation.navigate("Hug");}}>
-          <Image source={require("../../assets/top_nav_bar/backButton.png")}/>
+        <TouchableOpacity
+          style={styles.nav_icon}
+          onPress={() => {
+            navigation.navigate("Hug");
+          }}
+        >
+          <Image source={require("../../assets/top_nav_bar/backButton.png")} />
         </TouchableOpacity>
       </HeaderButtons>
-    ),
-    
-    headerRight: () => (
-      <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <TouchableOpacity style={styles.nav_icon} onPress={()=>{alert("More!")}}>
-          <Image source={require("../../assets/top_nav_bar/more.png")}/>
-        </TouchableOpacity>
-      </HeaderButtons>
-      
     ),
 
+    headerRight: () => (
+      <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+        <TouchableOpacity
+          style={styles.nav_icon}
+          onPress={() => {
+            alert("More!");
+          }}
+        >
+          <Image source={require("../../assets/top_nav_bar/more.png")} />
+        </TouchableOpacity>
+      </HeaderButtons>
+    ),
   };
 
   return (
@@ -110,11 +155,7 @@ export default function HugStack({ navigation }) {
         component={SnapHugsScreen}
         options={screenOptions}
       />
-       <Stack.Screen
-        name="Hug"
-        component={HugScreen}
-        options={HugTopNav}
-      />
+      <Stack.Screen name="Hug" component={HugScreen} options={HugTopNav} />
       <Stack.Screen
         name="Partner"
         component={PartnerScreen}
@@ -127,9 +168,9 @@ export default function HugStack({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
   nav_icon: {
     borderRadius: 10,
