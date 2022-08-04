@@ -28,8 +28,9 @@ import {
 export default function StoriesScreen({ navigation }) {
   return (
     <NativeBaseProvider>
+      {/* <Container style={styles.container}> */}
       {/* ScrollView enables scrolling. Scroll bar indicator is turned off */}
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
         {/* Friends section */}
         <Container style={styles.friends}>
           <Text bold fontSize="md">
@@ -132,11 +133,16 @@ export default function StoriesScreen({ navigation }) {
           </VStack>
         </Container>
       </ScrollView>
+      {/* </Container> */}
     </NativeBaseProvider>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#fff",
+  },
+
   friends: {
     margin: 16,
     minWidth: 400,
