@@ -12,6 +12,8 @@ import {
 	Button
   } from "native-base";
 
+var height = Dimensions.get("window").height;
+var width = Dimensions.get("window").width;
 export default function PartnerScreen() {
   // Needed in order to use .show()
 //   const bottomSheet = useRef();
@@ -25,12 +27,15 @@ export default function PartnerScreen() {
 //   }
 
   return (
-	<SafeAreaView>
-		<ScrollView style = {{backgroundColor: "1E1E1E"}}>
-			<Image sytle = {styles.logo} bg="light.300" source={require("../../assets/exp_logo.png")}/>
-			<Image bg="light.300" source={require("../../assets/exp_data.png")}/>
+	<NativeBaseProvider>
+		<ScrollView>
+		<View style={{width: 420, height: 1200, alignSelf: "center"}} >
+			<Image style= {{flex:1 , width: undefined, height: undefined}}    
+			source={require("../../assets/exp.png")}
+				/>
+		</View>
 		</ScrollView>
-	</SafeAreaView>
+	</NativeBaseProvider>
 	
 	// <NativeBaseProvider>
 	//   <ScrollView contentContainerStyle={styles.container} w="100%">
@@ -90,6 +95,16 @@ export default function PartnerScreen() {
 
 }
 const stylesheet = StyleSheet.create({
+	image: {
+		flex: 1,
+		width: '100%',
+		height: '100%',
+		resizeMode: 'contain',
+	},
+	exp: {
+		flex: 1,
+		resizeMode: 'contain'
+	},
 	_Profile_Information: {
 		alignItems: 'center',
 		textAlign: 'center',

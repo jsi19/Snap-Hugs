@@ -91,35 +91,6 @@ export default function StoriesStack({ navigation }) {
     ),
   };
 
-  let HugTopNav = {
-    tabBarShowLabel: false,
-    headerLeft: () => (
-      <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <TouchableOpacity
-          style={styles.nav_icon}
-          onPress={() => {
-            navigation.navigate("Stories");
-          }}
-        >
-          <Image source={require("../../assets/top_nav_bar/backButton.png")} />
-        </TouchableOpacity>
-      </HeaderButtons>
-    ),
-
-    headerRight: () => (
-      <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <TouchableOpacity
-          style={styles.nav_icon}
-          onPress={() => {
-            alert("More!");
-          }}
-        >
-          <Image source={require("../../assets/top_nav_bar/more.png")} />
-        </TouchableOpacity>
-      </HeaderButtons>
-    ),
-  };
-
   return (
     <Stack.Navigator>
       <Stack.Screen

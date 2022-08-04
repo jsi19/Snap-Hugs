@@ -2,6 +2,7 @@ import bitmoji from "../../assets/top_nav_bar/new_bitmoji.png";
 import search from "../../assets/top_nav_bar/new_search.png";
 import addFriend from "../../assets/top_nav_bar/new_addfriend.png";
 import more from "../../assets/top_nav_bar/new_more.png";
+import back from "../../assets/top_nav_bar/new_back.png";
 
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -22,7 +23,6 @@ import {
   OverflowMenu,
 } from "react-navigation-header-buttons";
 import CustomHeaderButton from "../components/CustomHeaderButton";
-import { getAuth, signOut } from "firebase/auth";
 
 // Screens
 import SnapHugsScreen from "../screens/SnapHugsScreen";
@@ -32,8 +32,6 @@ import PartnerScreen from "../screens/PartnerScreen";
 const Stack = createStackNavigator();
 
 export default function HugStack({ navigation }) {
-  const auth = getAuth();
-  const user = auth.currentUser;
 
   let screenOptions = {
     tabBarShowLabel: false,
@@ -90,17 +88,31 @@ export default function HugStack({ navigation }) {
     ),
   };
 
+  let HugListTopNav = {
+    tabBarShowLabel: false,
+    headerLeft: () => (
+      <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+        <TouchableOpacity style={styles.nav_icon} onPress={() => {navigation.navigate("Stories");}}>
+          <Image source={back} style={{ height: 40, width: 40 }} />
+        </TouchableOpacity>
+      </HeaderButtons>
+    ),
+
+    headerRight: () => (
+      <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+        <TouchableOpacity style={styles.nav_icon} onPress={()=>{alert("More!")}}>
+          <Image source={more} style={{ height: 40, width: 40 }} />
+        </TouchableOpacity>
+      </HeaderButtons>
+    ),
+  };
+
   let HugTopNav = {
     tabBarShowLabel: false,
     headerLeft: () => (
       <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
-        <TouchableOpacity
-          style={styles.nav_icon}
-          onPress={() => {
-            navigation.navigate("Stories");
-          }}
-        >
-          <Image source={require("../../assets/top_nav_bar/backButton.png")} />
+        <TouchableOpacity style={styles.nav_icon} onPress={() => {navigation.navigate("Snap Hugs");}}>
+          <Image source={back} style={{ height: 40, width: 40 }} />
         </TouchableOpacity>
       </HeaderButtons>
     ),
@@ -113,7 +125,7 @@ export default function HugStack({ navigation }) {
             alert("More!");
           }}
         >
-          <Image source={require("../../assets/top_nav_bar/more.png")} />
+          <Image source={more} style={{ height: 40, width: 40 }} />
         </TouchableOpacity>
       </HeaderButtons>
     ),
@@ -129,7 +141,7 @@ export default function HugStack({ navigation }) {
             navigation.navigate("Hug");
           }}
         >
-          <Image source={require("../../assets/top_nav_bar/backButton.png")} />
+          <Image source={back} style={{ height: 40, width: 40 }} />
         </TouchableOpacity>
       </HeaderButtons>
     ),
@@ -142,7 +154,7 @@ export default function HugStack({ navigation }) {
             alert("More!");
           }}
         >
-          <Image source={require("../../assets/top_nav_bar/more.png")} />
+          <Image source={more} style={{ height: 40, width: 40 }} />
         </TouchableOpacity>
       </HeaderButtons>
     ),
@@ -153,7 +165,7 @@ export default function HugStack({ navigation }) {
       <Stack.Screen
         name="Snap Hugs"
         component={SnapHugsScreen}
-        options={screenOptions}
+        options={HugListTopNav}
       />
       <Stack.Screen name="Hug" component={HugScreen} options={HugTopNav} />
       <Stack.Screen
