@@ -25,7 +25,7 @@ import { getAuth, signOut } from "firebase/auth";
 // Screens
 import MapScreen from "../screens/MapScreen";
 import CameraScreen from "../screens/CameraScreen";
-import CameraScreenv2 from "../screens/CameraScreenv2";
+import CameraScreenv2 from "../screens/CameraScreen";
 import StoriesScreen from "../screens/StoriesScreen";
 import SpotlightScreen from "../screens/SpotlightScreen";
 import HugScreen from "../screens/HugScreen";
