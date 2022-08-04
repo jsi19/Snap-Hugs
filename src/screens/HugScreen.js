@@ -10,7 +10,7 @@ import React, { useState } from "react";
 import { View, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
 import GestureRecognizer from "react-native-swipe-gestures";
 import Modal from "react-native-modal";
-import HugStoryComponent from "../components/StoryComponent";
+import HugStoryComponent from "../components/HugStoryComponent";
 import {
   NativeBaseProvider,
   ChevronRightIcon,
@@ -73,25 +73,25 @@ export default function HugScreen({ navigation }) {
                 />
                 <HugStoryComponent
                 imageSource={person2}
-                shortName="Alvin"
+                shortName="Nila"
                 longName="Alvin Castillo"
                 videoTitle="A Day in the Life"
                 />
                 <HugStoryComponent
                 imageSource={person3}
-                shortName="Alvin"
+                shortName="Rex"
                 longName="Alvin Castillo"
                 videoTitle="A Day in the Life"
                 />
                 <HugStoryComponent
                 imageSource={person4}
-                shortName="Alvin"
+                shortName="Devin"
                 longName="Alvin Castillo"
                 videoTitle="A Day in the Life"
                 />
                 <HugStoryComponent
                 imageSource={person5}
-                shortName="Alvin"
+                shortName="Alex"
                 longName="Alvin Castillo"
                 videoTitle="A Day in the Life"
                 />
@@ -231,7 +231,7 @@ export default function HugScreen({ navigation }) {
     stories_partners: {
       minWidth: '100%',
       padding: 10,
-      marginLeft:0
+      marginLeft:0,
     },
   
     learnMoreButtonSection: {
