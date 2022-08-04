@@ -54,6 +54,7 @@ export default function StoriesStack({ navigation }) {
           }}
         >
           <Image
+            alt="Bitmoji"
             source={bitmoji}
             style={{ height: 46, width: 46, marginLeft: 10, marginRight: 4 }}
           />
@@ -64,7 +65,7 @@ export default function StoriesStack({ navigation }) {
             alert("Search!");
           }}
         >
-          <Image source={search} style={{ height: 40, width: 40 }} />
+          <Image alt="Search" source={search} style={{ height: 40, width: 40 }} />
         </TouchableOpacity>
       </HeaderButtons>
     ),
@@ -77,7 +78,7 @@ export default function StoriesStack({ navigation }) {
             alert("Add friend");
           }}
         >
-          <Image source={addFriend} style={{ height: 40, width: 40 }} />
+          <Image alt="Add Friend" source={addFriend} style={{ height: 40, width: 40 }} />
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.nav_icon}
@@ -85,7 +86,7 @@ export default function StoriesStack({ navigation }) {
             alert("More!");
           }}
         >
-          <Image source={more} style={{ height: 40, width: 40 }} />
+          <Image alt="More" source={more} style={{ height: 40, width: 40 }} />
         </TouchableOpacity>
       </HeaderButtons>
     ),

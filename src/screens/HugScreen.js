@@ -44,7 +44,7 @@ export default function HugScreen({ navigation }) {
 
           {/* Logo Image of Hug Community */}
           <View>
-            <Image style = {styles.logo} bg="light.300" source={require("../../assets/hug_logo.png")}/>
+            <Image style = {styles.logo} bg="light.300" source={require("../../assets/hug_logo.png")} alt={"Hug Logo"}/>
             {/* <Heading h="250" w="415" bg="light.300" /> */}
           </View>
 
@@ -107,13 +107,13 @@ export default function HugScreen({ navigation }) {
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
               <HStack space={3} justifyContent="center" marginTop={2}>
                 <Center h="170" w="170" bg="light.300" rounded="2xl">
-                  <Image h="173" w="173" source={require("../../assets/TechnologyHug/insights/insight1.png")}/>
+                  <Image h="173" w="173" source={require("../../assets/TechnologyHug/insights/insight1.png")} alt={"Industry Insight 1"} />
                 </Center>
                 <Center h="170" w="170" bg="light.300" rounded="2xl">
-                  <Image h="170" w="170" source={require("../../assets/TechnologyHug/insights/insight2.png")}/>
+                  <Image h="170" w="170" source={require("../../assets/TechnologyHug/insights/insight2.png")} alt={"Industry Insight 2"} />
                 </Center>
                 <Center h="170" w="170" bg="light.300" rounded="2xl">
-                  <Image h="170" w="170" source={require("../../assets/TechnologyHug/insights/insight3.png")}/>
+                  <Image h="170" w="170" source={require("../../assets/TechnologyHug/insights/insight3.png")} alt={"Industry Insight 3"} />
                 </Center>
               </HStack>
             </ScrollView>
@@ -128,14 +128,14 @@ export default function HugScreen({ navigation }) {
               <HStack space={3} justifyContent="center" marginTop={2}>
                 <TouchableOpacity onPress={() => {navigation.navigate("Partner");}}>
                   <Center h="140" w="140" bg="light.300" rounded="2xl">
-                    <Image h="140" w="140" source={require("../../assets/TechnologyHug/partners/partner1.png")}/>
+                    <Image h="140" w="140" source={require("../../assets/TechnologyHug/partners/partner1.png")} alt={"Partner 1"}/>
                   </Center>
                 </TouchableOpacity>
                 <Center h="140" w="140" bg="light.300" rounded="2xl">
-                  <Image h="140" w="140" source={require("../../assets/TechnologyHug/partners/partner2.png")}/>
+                  <Image h="140" w="140" source={require("../../assets/TechnologyHug/partners/partner2.png")} alt={"Partner 2"}/>
                 </Center>
                 <Center h="140" w="140" bg="light.300" rounded="2xl">
-                  <Image h="150" w="140" source={require("../../assets/TechnologyHug/partners/partner3.png")}/>
+                  <Image h="150" w="140" source={require("../../assets/TechnologyHug/partners/partner3.png")} alt={"Partner 3"}/>
                 </Center>
               </HStack>
             </ScrollView>

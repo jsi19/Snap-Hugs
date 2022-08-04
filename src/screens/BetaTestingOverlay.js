@@ -34,7 +34,7 @@ export default function BetaTestingOverlay() {
     //   onSwipeUp={() => setModalVisible(false)}
     >
       <TouchableOpacity style={styles.beta_test} justifyContent="center" onPress={() => setModalVisible(true)} >
-        <Image h="180" w="380" source={require("../../assets/beta_test/beta_button.png")} />
+        <Image h="180" w="380" source={require("../../assets/beta_test/beta_button.png")} alt="Beta Button"/>
       </TouchableOpacity > 
       <Modal
         isVisible={isModalVisible}
@@ -75,7 +75,7 @@ export default function BetaTestingOverlay() {
         <View style={styles.modalView}>
           {/* Logo Image of Hug Community */}
           <View style = {styles.betaLogo}>
-            <Image h="190" w="420" bg="light.300" source={require("../../assets/beta_test/beta_logo.png")}/>
+            <Image h="190" w="420" bg="light.300" source={require("../../assets/beta_test/beta_logo.png")} alt="Beta Logo"/>
             {/* <Heading h="250" w="415" bg="light.300" /> */}
           </View>
 
@@ -102,13 +102,13 @@ export default function BetaTestingOverlay() {
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
               <HStack space={3} justifyContent="center" marginTop={2}>
                 <Center style={styles.lens} rounded="2xl">
-                    <Image h="270" w="115" source={require("../../assets/beta_test/lens1.png")}/>
+                    <Image h="270" w="115" source={require("../../assets/beta_test/lens1.png")} alt="Lens 1"/>
                 </Center>
                 <Center style={styles.lens} rounded="2xl">
-                    <Image h="270" w="115" source={require("../../assets/beta_test/lens2.png")}/>
+                    <Image h="270" w="115" source={require("../../assets/beta_test/lens2.png")} alt="Lens 2"/>
                 </Center>
                 <Center style={styles.lens} rounded="2xl">
-                    <Image h="270" w="115" source={require("../../assets/beta_test/lens3.png")}/>
+                    <Image h="270" w="115" source={require("../../assets/beta_test/lens3.png")} alt="Lens 3"/>
                 </Center>
               </HStack>
             </ScrollView>
@@ -123,7 +123,7 @@ export default function BetaTestingOverlay() {
             </Container>
             <ScrollView vertical={true} showsHorizontalScrollIndicator={false}>
                 <Center style = {styles.game_mini}>
-                    <Image h="220" w="390" source={require("../../assets/beta_test/game_mini.png")}/>
+                    <Image h="220" w="390" source={require("../../assets/beta_test/game_mini.png")} alt="Games and Minis"/>
                 </Center>
             </ScrollView>
           </Container>

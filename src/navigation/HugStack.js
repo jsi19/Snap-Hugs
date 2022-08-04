@@ -51,6 +51,7 @@ export default function HugStack({ navigation }) {
           }}
         >
           <Image
+            alt=""
             source={bitmoji}
             style={{ height: 46, width: 46, marginLeft: 10, marginRight: 4 }}
           />
@@ -61,7 +62,7 @@ export default function HugStack({ navigation }) {
             alert("Search!");
           }}
         >
-          <Image source={search} style={{ height: 40, width: 40 }} />
+          <Image alt="" source={search} style={{ height: 40, width: 40 }} />
         </TouchableOpacity>
       </HeaderButtons>
     ),
@@ -74,7 +75,7 @@ export default function HugStack({ navigation }) {
             alert("Add friend");
           }}
         >
-          <Image source={addFriend} style={{ height: 40, width: 40 }} />
+          <Image alt="" source={addFriend} style={{ height: 40, width: 40 }} />
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.nav_icon}
@@ -82,7 +83,7 @@ export default function HugStack({ navigation }) {
             alert("More!");
           }}
         >
-          <Image source={more} style={{ height: 40, width: 40 }} />
+          <Image alt="" source={more} style={{ height: 40, width: 40 }} />
         </TouchableOpacity>
       </HeaderButtons>
     ),
@@ -93,7 +94,7 @@ export default function HugStack({ navigation }) {
     headerLeft: () => (
       <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
         <TouchableOpacity style={styles.nav_icon} onPress={() => {navigation.navigate("Stories");}}>
-          <Image source={back} style={{ height: 40, width: 40 }} />
+          <Image alt="" source={back} style={{ height: 40, width: 40 }} />
         </TouchableOpacity>
       </HeaderButtons>
     ),
@@ -101,7 +102,7 @@ export default function HugStack({ navigation }) {
     headerRight: () => (
       <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
         <TouchableOpacity style={styles.nav_icon} onPress={()=>{alert("More!")}}>
-          <Image source={more} style={{ height: 40, width: 40 }} />
+          <Image alt="" source={more} style={{ height: 40, width: 40 }} />
         </TouchableOpacity>
       </HeaderButtons>
     ),
@@ -112,7 +113,7 @@ export default function HugStack({ navigation }) {
     headerLeft: () => (
       <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
         <TouchableOpacity style={styles.nav_icon} onPress={() => {navigation.navigate("Snap Hugs");}}>
-          <Image source={back} style={{ height: 40, width: 40 }} />
+          <Image alt="" source={back} style={{ height: 40, width: 40 }} />
         </TouchableOpacity>
       </HeaderButtons>
     ),
@@ -125,7 +126,7 @@ export default function HugStack({ navigation }) {
             alert("More!");
           }}
         >
-          <Image source={more} style={{ height: 40, width: 40 }} />
+          <Image alt="" source={more} style={{ height: 40, width: 40 }} />
         </TouchableOpacity>
       </HeaderButtons>
     ),
@@ -141,7 +142,7 @@ export default function HugStack({ navigation }) {
             navigation.navigate("Hug");
           }}
         >
-          <Image source={back} style={{ height: 40, width: 40 }} />
+          <Image alt="" source={back} style={{ height: 40, width: 40 }} />
         </TouchableOpacity>
       </HeaderButtons>
     ),
@@ -154,7 +155,7 @@ export default function HugStack({ navigation }) {
             alert("More!");
           }}
         >
-          <Image source={more} style={{ height: 40, width: 40 }} />
+          <Image alt="" source={more} style={{ height: 40, width: 40 }} />
         </TouchableOpacity>
       </HeaderButtons>
     ),
