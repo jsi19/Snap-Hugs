@@ -12,7 +12,7 @@ import discover4 from "../../assets/images/discover_images/Discover4.png";
 import vanessaVideo from "../../assets/video/vanessa_test.mp4";
 import StoryComponent from "../components/StoryComponent";
 import React from "react";
-import { StyleSheet, ImageBackground } from "react-native";
+import { StyleSheet } from "react-native";
 import {
   NativeBaseProvider,
   Container,
@@ -28,7 +28,6 @@ import {
 export default function StoriesScreen({ navigation }) {
   return (
     <NativeBaseProvider>
-      {/* <Container style={styles.container}> */}
       {/* ScrollView enables scrolling. Scroll bar indicator is turned off */}
       <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
         {/* Friends section */}
@@ -84,7 +83,7 @@ export default function StoriesScreen({ navigation }) {
         {/* Hugs section */}
         <Container style={styles.hugs}>
           <Text bold fontSize="md">
-            HUGS
+            Hugs
           </Text>
           <Pressable
             onPress={() => {
@@ -133,7 +132,6 @@ export default function StoriesScreen({ navigation }) {
           </VStack>
         </Container>
       </ScrollView>
-      {/* </Container> */}
     </NativeBaseProvider>
   );
 }
