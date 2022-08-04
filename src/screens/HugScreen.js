@@ -14,12 +14,14 @@ import {
   ScrollView,
   Pressable,
   Image,
+  ImageBackground,
   Divider,
   Heading,
   Button
 } from "native-base";
 
 import StoriesOverlay from "./StoriesOverlay";
+import BetaTestingOverlay from "./BetaTestingOverlay";
 import PartnerScreen from "./PartnerScreen";
 
 var height = Dimensions.get('window').height;
@@ -83,7 +85,7 @@ export default function HugScreen({ navigation }) {
           {/* Community Partners section */}
           <Container style={styles.stories_partners}>
             <Text bold fontSize="lg" color="white">
-              Community Partners
+              Get Involved With Partners
             </Text>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
               <HStack space={3} justifyContent="center" marginTop={2}>
@@ -97,20 +99,18 @@ export default function HugScreen({ navigation }) {
             </ScrollView>
           </Container>
 
+         
           {/* Beta Testing section */}
-          <Container style={styles.stories_partners} justifyContent="center">
+          <TouchableOpacity style={styles.beta_test} justifyContent="center">
+            <Image h="180" w="380" source={require("../../assets/beta_test/beta_button.png")} />
+            <BetaTestingOverlay/>
+          </TouchableOpacity > 
+          {/* <Container style={styles.stories_partners} justifyContent="center">
             <Text bold fontSize="lg" color="white">
-              Beta Testing
+              Become a Beta Tester
             </Text>
-            <Container style={styles.learnMoreButtonSection}>
-              <Button style={styles.betaTestButton} bg ="black" rounded="xl">
-                <Text bold fontSize="md" color="white">
-                  Try Ghost!
-                </Text>
-              </Button>
-            </Container>
-            {/* <Center h="190" w="150" bg="light.300" rounded="2xl" /> */}
-          </Container>
+          </Container> */}
+          
   
           {/* Get Involved section
           <Container style={styles.stories_partners}>
@@ -160,6 +160,11 @@ export default function HugScreen({ navigation }) {
 
 
   const styles = StyleSheet.create({
+    beta_test: {
+      minWidth: '100%',
+      padding: 10,
+      marginLeft: 0,
+    },
     event: {
       height: 50,
       width: 380,
