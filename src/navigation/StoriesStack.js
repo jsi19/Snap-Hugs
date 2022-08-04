@@ -1,4 +1,8 @@
 import bitmoji from "../../assets/top_nav_bar/new_bitmoji.png";
+import search from "../../assets/top_nav_bar/new_search.png";
+import addFriend from "../../assets/top_nav_bar/new_addfriend.png";
+import more from "../../assets/top_nav_bar/new_more.png";
+
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -37,7 +41,6 @@ export default function StoriesStack({ navigation }) {
     headerLeft: () => (
       <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
         <TouchableOpacity
-          style={styles.nav_icon}
           onPress={() => {
             signOut(auth)
               .then(() => {
@@ -50,7 +53,10 @@ export default function StoriesStack({ navigation }) {
               });
           }}
         >
-          <Image source={bitmoji} style={{ height: 46, width: 46 }} />
+          <Image
+            source={bitmoji}
+            style={{ height: 46, width: 46, marginLeft: 10, marginRight: 4 }}
+          />
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.nav_icon}
@@ -58,7 +64,7 @@ export default function StoriesStack({ navigation }) {
             alert("Search!");
           }}
         >
-          <Image source={require("../../assets/top_nav_bar/search.png")} />
+          <Image source={search} style={{ height: 40, width: 40 }} />
         </TouchableOpacity>
       </HeaderButtons>
     ),
@@ -71,7 +77,7 @@ export default function StoriesStack({ navigation }) {
             alert("Add friend");
           }}
         >
-          <Image source={require("../../assets/top_nav_bar/add_friend.png")} />
+          <Image source={addFriend} style={{ height: 40, width: 40 }} />
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.nav_icon}
@@ -79,7 +85,7 @@ export default function StoriesStack({ navigation }) {
             alert("More!");
           }}
         >
-          <Image source={require("../../assets/top_nav_bar/more.png")} />
+          <Image source={more} style={{ height: 40, width: 40 }} />
         </TouchableOpacity>
       </HeaderButtons>
     ),
