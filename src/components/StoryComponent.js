@@ -1,12 +1,12 @@
 import StoriesOverlay from "../screens/StoriesOverlay.js";
 import React from "react";
 import { ImageBackground } from "react-native";
-import { Text, VStack } from "native-base";
+import { Text, VStack, Center } from "native-base";
 
 export default function StoryComponent(props) {
   return (
     <>
-      <VStack space={1}>
+      <VStack space={1} justifyItems="center">
         <ImageBackground source={props.imageSource} resizeMode="contain">
           <StoriesOverlay
             videoSource={props.videoSource}
@@ -15,9 +15,11 @@ export default function StoryComponent(props) {
             videoTitle={props.videoTitle}
           />
         </ImageBackground>
-        <Text bold fontSize="sm">
-          {props.shortName}
-        </Text>
+        <Center>
+          <Text bold fontSize="sm">
+            {props.shortName}
+          </Text>
+        </Center>
       </VStack>
     </>
   );

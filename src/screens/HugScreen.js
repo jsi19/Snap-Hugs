@@ -1,4 +1,4 @@
-import bertrandImg from "../../assets/profile_images/bertrand.png";
+import bertrandImg from "../../assets/images/profile_images/bertrand.png";
 import bertrandVideo from "../../assets/video/bertrandVideo.mp4";
 import React, { useState } from "react";
 import { View, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
