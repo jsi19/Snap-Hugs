@@ -5,6 +5,7 @@ import person2 from "../../assets/TechnologyHug/stories/career_story2.png";
 import person3 from "../../assets/TechnologyHug/stories/career_story3.png";
 import person4 from "../../assets/TechnologyHug/stories/career_story4.png";
 import person5 from "../../assets/TechnologyHug/stories/career_story5.png";
+import bertrandImage from "../../assets/TechnologyHug/insights/insight1.png";
 
 
 import React, { useState } from "react";
@@ -12,6 +13,7 @@ import { View, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
 import GestureRecognizer from "react-native-swipe-gestures";
 import Modal from "react-native-modal";
 import HugStoryComponent from "../components/HugStoryComponent";
+import InsightComponent from "../components/InsightComponent";
 import {
   NativeBaseProvider,
   ChevronRightIcon,
@@ -107,9 +109,16 @@ export default function HugScreen({ navigation }) {
             </Text>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
               <HStack space={3} justifyContent="center" marginTop={2}>
-                <Center h="170" w="170" bg="light.300" rounded="2xl">
+                <InsightComponent
+                  imageSource={bertrandImage}
+                  videoSource={bertrandVideo}
+                  shortName="Trung"
+                  longName="Bertrand Saint-Preux"
+                  videoTitle="Product Manager for Snap's Inclusive Camera"
+                />
+                {/* <Center h="170" w="170" bg="light.300" rounded="2xl">
                   <Image h="173" w="173" source={require("../../assets/TechnologyHug/insights/insight1.png")} alt={"Industry Insight 1"} />
-                </Center>
+                </Center> */}
                 <Center h="170" w="170" bg="light.300" rounded="2xl">
                   <Image h="170" w="170" source={require("../../assets/TechnologyHug/insights/insight2.png")} alt={"Industry Insight 2"} />
                 </Center>
