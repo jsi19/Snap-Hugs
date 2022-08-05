@@ -90,7 +90,7 @@ export default function BetaTestingOverlay() {
 
           {/* Lens section */}
           <Container style={styles.lens_section}>
-            <Container justifyContent = "space-between" flexDirection= "row" marginBottom={2}>
+            <Container justifyContent = "space-between" flexDirection= "row" marginBottom={1}>
                 <Text bold fontSize="lg" color="white">
                 Lenses
                 </Text>
@@ -102,7 +102,7 @@ export default function BetaTestingOverlay() {
                 </TouchableOpacity>
             </Container>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-              <HStack space={3} justifyContent="center" marginTop={2}>
+              <HStack space={3} justifyContent="center" marginTop={2} marginBottom={2}>
                 <TouchableOpacity>
                     <Center style={styles.lens} rounded="2xl">
                         <Image h="270" w="115" source={require("../../assets/beta_test/lens1.png")} alt="Lens 1"/>
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
         paddingBottom : 10,
       },
     lens_section: {
-        flex: 6,
+        flex: 6.2,
         minWidth: '100%',
         padding: 10,
         marginLeft: 0,
