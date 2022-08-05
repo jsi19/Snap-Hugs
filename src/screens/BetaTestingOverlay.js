@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
         marginLeft: 0,
       },
     game_mini_section: {
-        flex: 6,
+        flex: 6.2,
         minWidth: '100%',
         padding: 10,
         marginLeft: 0,
