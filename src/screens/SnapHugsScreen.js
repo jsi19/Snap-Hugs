@@ -26,16 +26,16 @@ export default function SnapHugsScreen({ navigation }) {
         </Center>
 
         {/* Hug Communities section */}
-        <Center style={styles.hug_communities}>
-          <Text bold fontSize="md">
+        <Center style={styles.hug_communities} w="100%" >
+          <Text bold fontSize="md" marginLeft={-210}>
             Hug Communities
           </Text>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            <VStack space={6} alignItems="center">
+            <VStack space={6}>
               <TouchableOpacity onPress={() => {navigation.navigate("Hug");}}>
                 <Image h="86" w="367" source={require("../../assets/hug_list/technology.png")} alt="Hug Community 1" />
               </TouchableOpacity>
-              <Image h="86" w="367" flexDirection='row' justifyContent="center" alignItems="center" source={require("../../assets/hug_list/activism.png")} alt="Hug Community 2"/>
+              <Image h="86" w="367" source={require("../../assets/hug_list/activism.png")} alt="Hug Community 2"/>
               <Image h="86" w="367" source={require("../../assets/hug_list/engineering.png")} alt="Hug Community 3"/>
               <Image h="86" w="367" source={require("../../assets/hug_list/healthcare.png")} alt="Hug Community 4"/>
               <Image h="86" w="367" source={require("../../assets/hug_list/finance.png")} alt="Hug Community 5"/>

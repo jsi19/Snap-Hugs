@@ -1,16 +1,19 @@
-import bertrandImg from "../../assets/images/profile_images/bertrand.png";
+
 import bertrandVideo from "../../assets/video/bertrandVideo.mp4";
+import person1 from "../../assets/TechnologyHug/stories/career_story1.png";
 import person2 from "../../assets/TechnologyHug/stories/career_story2.png";
 import person3 from "../../assets/TechnologyHug/stories/career_story3.png";
 import person4 from "../../assets/TechnologyHug/stories/career_story4.png";
 import person5 from "../../assets/TechnologyHug/stories/career_story5.png";
+import bertrandImage from "../../assets/TechnologyHug/insights/insight1.png";
 
 
 import React, { useState } from "react";
 import { View, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
 import GestureRecognizer from "react-native-swipe-gestures";
 import Modal from "react-native-modal";
-import HugStoryComponent from "../components/StoryComponent";
+import HugStoryComponent from "../components/HugStoryComponent";
+import InsightComponent from "../components/InsightComponent";
 import {
   NativeBaseProvider,
   ChevronRightIcon,
@@ -43,8 +46,8 @@ export default function HugScreen({ navigation }) {
         <ScrollView style = {styles.hug_layout} showsVerticalScrollIndicator={false}>
 
           {/* Logo Image of Hug Community */}
-          <View>
-            <Image style = {styles.logo} bg="light.300" source={require("../../assets/hug_logo.png")} alt={"Hug Logo"}/>
+          <View w="410" h="190">
+            <Image w="400" h="190" style = {styles.logo} bg="light.300" source={require("../../assets/hug_logo.png")} alt={"Hug Logo"}/>
             {/* <Heading h="250" w="415" bg="light.300" /> */}
           </View>
 
@@ -65,33 +68,33 @@ export default function HugScreen({ navigation }) {
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
               <HStack space={3} justifyContent="center" marginTop={2}>
                 <HugStoryComponent
-                  imageSource={bertrandImg}
+                  imageSource={person1}
                   videoSource={bertrandVideo}
-                  shortName="Bertrand S"
+                  shortName="Trung"
                   longName="Bertrand Saint-Preux"
                   videoTitle="Product Manager for Snap's Inclusive Camera"
                 />
                 <HugStoryComponent
                 imageSource={person2}
-                shortName="Alvin"
+                shortName="Izzy"
                 longName="Alvin Castillo"
                 videoTitle="A Day in the Life"
                 />
                 <HugStoryComponent
                 imageSource={person3}
-                shortName="Alvin"
+                shortName="Rex"
                 longName="Alvin Castillo"
                 videoTitle="A Day in the Life"
                 />
                 <HugStoryComponent
                 imageSource={person4}
-                shortName="Alvin"
+                shortName="Albert"
                 longName="Alvin Castillo"
                 videoTitle="A Day in the Life"
                 />
                 <HugStoryComponent
                 imageSource={person5}
-                shortName="Alvin"
+                shortName="Alex"
                 longName="Alvin Castillo"
                 videoTitle="A Day in the Life"
                 />
@@ -106,9 +109,16 @@ export default function HugScreen({ navigation }) {
             </Text>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
               <HStack space={3} justifyContent="center" marginTop={2}>
-                <Center h="170" w="170" bg="light.300" rounded="2xl">
+                <InsightComponent
+                  imageSource={bertrandImage}
+                  videoSource={bertrandVideo}
+                  shortName="Trung"
+                  longName="Bertrand Saint-Preux"
+                  videoTitle="Product Manager for Snap's Inclusive Camera"
+                />
+                {/* <Center h="170" w="170" bg="light.300" rounded="2xl">
                   <Image h="173" w="173" source={require("../../assets/TechnologyHug/insights/insight1.png")} alt={"Industry Insight 1"} />
-                </Center>
+                </Center> */}
                 <Center h="170" w="170" bg="light.300" rounded="2xl">
                   <Image h="170" w="170" source={require("../../assets/TechnologyHug/insights/insight2.png")} alt={"Industry Insight 2"} />
                 </Center>
@@ -231,7 +241,7 @@ export default function HugScreen({ navigation }) {
     stories_partners: {
       minWidth: '100%',
       padding: 10,
-      marginLeft:0
+      marginLeft:0,
     },
   
     learnMoreButtonSection: {
@@ -239,7 +249,8 @@ export default function HugScreen({ navigation }) {
       justifyContent: 'center',
       alignItems: 'center',
       padding: 10,
-      marginTop: 16,
+      marginTop: 0,
+      marginBottom: -10,
    },
 
    learnMoreButton: {

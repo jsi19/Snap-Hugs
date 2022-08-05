@@ -90,26 +90,34 @@ export default function BetaTestingOverlay() {
 
           {/* Lens section */}
           <Container style={styles.lens_section}>
-            <Container justifyContent = "space-between" flexDirection= "row">
+            <Container justifyContent = "space-between" flexDirection= "row" marginBottom={1}>
                 <Text bold fontSize="lg" color="white">
                 Lenses
                 </Text>
-                <Container marginLeft = {195} flexDirection= "row" alignContent="center">
-                    <Text bold fontSize="md" color = "light.300"> Explore Lenses </Text>
-                    <ChevronRightIcon size="3" color = "light.300" alignSelf="center"/>
-                </Container>
+                <TouchableOpacity>
+                    <Container borderWidth={1} borderColor="white" marginLeft = {195} flexDirection= "row" alignContent="center" rounded="3xl">
+                        <Text bold fontSize="md" color = "light.300"> Explore Lenses </Text>
+                        <ChevronRightIcon size="3" color = "light.300" alignSelf="center"/>
+                    </Container>
+                </TouchableOpacity>
             </Container>
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-              <HStack space={3} justifyContent="center" marginTop={2}>
-                <Center style={styles.lens} rounded="2xl">
-                    <Image h="270" w="115" source={require("../../assets/beta_test/lens1.png")} alt="Lens 1"/>
-                </Center>
-                <Center style={styles.lens} rounded="2xl">
-                    <Image h="270" w="115" source={require("../../assets/beta_test/lens2.png")} alt="Lens 2"/>
-                </Center>
-                <Center style={styles.lens} rounded="2xl">
-                    <Image h="270" w="115" source={require("../../assets/beta_test/lens3.png")} alt="Lens 3"/>
-                </Center>
+              <HStack space={3} justifyContent="center" marginTop={2} marginBottom={2}>
+                <TouchableOpacity>
+                    <Center style={styles.lens} rounded="2xl">
+                        <Image h="270" w="115" source={require("../../assets/beta_test/lens1.png")} alt="Lens 1"/>
+                    </Center>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Center style={styles.lens} rounded="2xl">
+                        <Image h="270" w="115" source={require("../../assets/beta_test/lens2.png")} alt="Lens 2"/>
+                    </Center>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Center style={styles.lens} rounded="2xl">
+                        <Image h="270" w="115" source={require("../../assets/beta_test/lens3.png")} alt="Lens 3"/>
+                    </Center>
+                </TouchableOpacity>
               </HStack>
             </ScrollView>
           </Container>
@@ -141,7 +149,7 @@ const styles = StyleSheet.create({
         marginLeft: 0,
       },
     game_mini_section: {
-        flex: 6,
+        flex: 6.2,
         minWidth: '100%',
         padding: 10,
         marginLeft: 0,
@@ -160,7 +168,7 @@ const styles = StyleSheet.create({
         paddingBottom : 10,
       },
     lens_section: {
-        flex: 6,
+        flex: 6.2,
         minWidth: '100%',
         padding: 10,
         marginLeft: 0,
