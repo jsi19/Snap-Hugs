@@ -1,5 +1,6 @@
-import bertrandImg from "../../assets/images/profile_images/bertrand.png";
+
 import bertrandVideo from "../../assets/video/bertrandVideo.mp4";
+import person1 from "../../assets/TechnologyHug/stories/career_story1.png";
 import person2 from "../../assets/TechnologyHug/stories/career_story2.png";
 import person3 from "../../assets/TechnologyHug/stories/career_story3.png";
 import person4 from "../../assets/TechnologyHug/stories/career_story4.png";
@@ -43,8 +44,8 @@ export default function HugScreen({ navigation }) {
         <ScrollView style = {styles.hug_layout} showsVerticalScrollIndicator={false}>
 
           {/* Logo Image of Hug Community */}
-          <View>
-            <Image style = {styles.logo} bg="light.300" source={require("../../assets/hug_logo.png")} alt={"Hug Logo"}/>
+          <View w="410" h="190">
+            <Image w="400" h="190" style = {styles.logo} bg="light.300" source={require("../../assets/hug_logo.png")} alt={"Hug Logo"}/>
             {/* <Heading h="250" w="415" bg="light.300" /> */}
           </View>
 
@@ -65,15 +66,15 @@ export default function HugScreen({ navigation }) {
             <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
               <HStack space={3} justifyContent="center" marginTop={2}>
                 <HugStoryComponent
-                  imageSource={bertrandImg}
+                  imageSource={person1}
                   videoSource={bertrandVideo}
-                  shortName="Bertrand S"
+                  shortName="Trung"
                   longName="Bertrand Saint-Preux"
                   videoTitle="Product Manager for Snap's Inclusive Camera"
                 />
                 <HugStoryComponent
                 imageSource={person2}
-                shortName="Nila"
+                shortName="Izzy"
                 longName="Alvin Castillo"
                 videoTitle="A Day in the Life"
                 />
@@ -85,7 +86,7 @@ export default function HugScreen({ navigation }) {
                 />
                 <HugStoryComponent
                 imageSource={person4}
-                shortName="Devin"
+                shortName="Albert"
                 longName="Alvin Castillo"
                 videoTitle="A Day in the Life"
                 />
@@ -239,7 +240,8 @@ export default function HugScreen({ navigation }) {
       justifyContent: 'center',
       alignItems: 'center',
       padding: 10,
-      marginTop: 16,
+      marginTop: 0,
+      marginBottom: -10,
    },
 
    learnMoreButton: {

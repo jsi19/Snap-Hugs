@@ -33,6 +33,7 @@ export default function PartnerScreen() {
 			<Image alt="PartnerExp" style= {{flex:1 , width: undefined, height: undefined}}    
 			source={require("../../assets/exp.png")}
 				/>
+			<TouchableOpacity width="420" height= "1200" alignSelf= "center"/>
 		</View>
 		</ScrollView>
 	</NativeBaseProvider>
