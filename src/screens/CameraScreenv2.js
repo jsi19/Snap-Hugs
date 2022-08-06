@@ -6,6 +6,7 @@ import * as MediaLibrary from "expo-media-library";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 import VideoReplayScreen from "./VideoReplayScreen";
+// import { FFmpegKit } from "ffmpeg-kit-react-native";
 
 export default function App() {
   let cameraRef = useRef();
@@ -79,7 +80,20 @@ export default function App() {
     };
 
     const sendToHugs = () => {
-      // Merge video/sticker file and push to database so it appears on stories page
+      // Merge video/sticker file
+      // FFmpegKit.execute("-i file1.mp4 -c:v mpeg4 file2.mp4").then(
+      //   async (session) => {
+      //     const returnCode = await session.getReturnCode();
+      //     if (ReturnCode.isSuccess(returnCode)) {
+      //       // SUCCESS
+      //     } else if (ReturnCode.isCancel(returnCode)) {
+      //       // CANCEL
+      //     } else {
+      //       // ERROR
+      //     }
+      //   }
+      // );
+      // Push file to database so it appears on stories page
     };
 
     return (
