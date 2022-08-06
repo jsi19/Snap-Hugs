@@ -19,10 +19,7 @@ export default function VideoReplayScreen(props) {
       />
       <View style={styles.recordingOptions}>
         <Button title="Share" onPress={props.shareVideo} />
-        {/* {hasMediaLibraryPermission ? (
-        <Button title="Save" onPress={props.saveVideo} />
-      ) : undefined} */}
-
+        <Button title="Send to Hugs" onPress={props.sendToHugs} />
         <Button title="Save" onPress={props.saveVideo} />
 
         <Button title="Discard" onPress={props.setVideoToUndefined} />
@@ -49,6 +46,6 @@ const styles = StyleSheet.create({
   recordingOptions: {
     position: "absolute",
     alignSelf: "center",
-    marginTop: 700,
+    marginTop: 650,
   },
 });
