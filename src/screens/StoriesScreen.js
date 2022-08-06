@@ -5,11 +5,12 @@ import friend4 from "../../assets/images/profile_images/friend4.png";
 import friend5 from "../../assets/images/profile_images/friend5.png";
 import friend6 from "../../assets/images/profile_images/friend6.png";
 import hugsImg from "../../assets/images/snaphugs.png";
+
 import discover2 from "../../assets/images/discover_images/Discover2.png";
 import discover3 from "../../assets/images/discover_images/Discover3.png";
 import discover4 from "../../assets/images/discover_images/Discover4.png";
 
-import motherDaughterVideo from "../../assets/video/motherdaughter_video_sound.mp4";
+import motherDaughterVideo from "../../assets/video/motherdaughter_video_quieter.mov";
 import StoryComponent from "../components/StoryComponent";
 import React from "react";
 import { StyleSheet } from "react-native";
