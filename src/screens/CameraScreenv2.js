@@ -1,18 +1,11 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Button,
-  SafeAreaView,
-  TouchableOpacity,
-} from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { useEffect, useState, useRef } from "react";
 import { Camera, CameraType } from "expo-camera";
 import { shareAsync } from "expo-sharing";
 import * as MediaLibrary from "expo-media-library";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import Sticker from "../components/StickerComponent";
-import VideoComponent from "../components/VideoComponent";
+
+import VideoReplayScreen from "./VideoReplayScreen";
 
 export default function App() {
   let cameraRef = useRef();
@@ -23,6 +16,8 @@ export default function App() {
 
   const [isRecording, setIsRecording] = useState(false);
   const [video, setVideo] = useState();
+
+  const setVideoToUndefined = () => setVideo(undefined);
 
   useEffect(() => {
     (async () => {
@@ -73,31 +68,24 @@ export default function App() {
   if (video) {
     let shareVideo = () => {
       shareAsync(video.uri).then(() => {
-        setVideo(undefined);
+        setVideoToUndefined();
       });
     };
 
     let saveVideo = () => {
       MediaLibrary.saveToLibraryAsync(video.uri).then(() => {
-        setVideo(undefined);
+        setVideoToUndefined();
       });
     };
 
+    // Video replay screen
     return (
-      <SafeAreaView style={styles.videoPlaybackContainer}>
-        <VideoComponent
-          style={styles.videoPlayback}
-          videoSource={{ uri: video.uri }}
-        />
-        <View style={styles.recordingOptions}>
-          <Button title="Share" onPress={shareVideo} />
-          {hasMediaLibraryPermission ? (
-            <Button title="Save" onPress={saveVideo} />
-          ) : undefined}
-          <Button title="Discard" onPress={() => setVideo(undefined)} />
-        </View>
-        <Sticker />
-      </SafeAreaView>
+      <VideoReplayScreen
+        videoSource={{ uri: video.uri }}
+        shareVideo={shareVideo}
+        saveVideo={saveVideo}
+        setVideoToUndefined={setVideoToUndefined}
+      />
     );
   }
 
@@ -172,28 +160,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
-  videoPlaybackContainer: { position: "relative" },
-
-  videoPlayback: {
-    // alignSelf: "center",
-    position: "relative",
-    justifyContent: "center",
-    alignItems: "center",
-    flex: 0,
-    marginLeft: -35,
-    width: 500,
-    height: 780,
-  },
-
   isRecording: {
     marginTop: -5,
     opacity: 0.4,
-  },
-
-  recordingOptions: {
-    position: "absolute",
-    alignSelf: "center",
-    marginTop: 700,
   },
 
   cameraOptions: {
