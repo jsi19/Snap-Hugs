@@ -78,14 +78,25 @@ export default function App() {
       });
     };
 
-    // Video replay screen
+    const sendToHugs = () => {
+      // Merge video/sticker file and push to database so it appears on stories page
+    };
+
     return (
+      // Video replay screen
       <VideoReplayScreen
         videoSource={{ uri: video.uri }}
         shareVideo={shareVideo}
+        sendToHugs={sendToHugs}
         saveVideo={saveVideo}
         setVideoToUndefined={setVideoToUndefined}
       />
+
+      // Sticker overlay screen
+
+      // If sticker selected, show sticker on video replay screen
+
+      // Send to screen (Hugs only appear if sticker selected)
     );
   }
 
