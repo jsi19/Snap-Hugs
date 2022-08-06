@@ -9,7 +9,7 @@ import discover2 from "../../assets/images/discover_images/Discover2.png";
 import discover3 from "../../assets/images/discover_images/Discover3.png";
 import discover4 from "../../assets/images/discover_images/Discover4.png";
 
-import vanessaVideo from "../../assets/video/vanessa_test.mp4";
+import motherDaughterVideo from "../../assets/video/motherdaughter_video_sound.mp4";
 import StoryComponent from "../components/StoryComponent";
 import React from "react";
 import { StyleSheet } from "react-native";
@@ -39,10 +39,10 @@ export default function StoriesScreen({ navigation }) {
             <HStack space={3} justifyContent="center">
               <StoryComponent
                 imageSource={friend1}
-                videoSource={vanessaVideo}
+                videoSource={motherDaughterVideo}
                 shortName="Lois L"
                 longName="Lois Lovelace"
-                videoTitle="A Day in the Life"
+                videoTitle="Mom and me 2002"
               />
 
               <StoryComponent
