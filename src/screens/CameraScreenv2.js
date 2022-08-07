@@ -12,6 +12,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import VideoReplayScreen from "./VideoReplayScreen";
 import CameraOptionsv2 from "../components/CameraOptionsv2";
 import CircularProgressIndicator from "../components/CircularProgressIndicator";
+import Sticker from "../components/StickerComponent";
 
 export default function App() {
   let cameraRef = useRef();
@@ -103,13 +104,15 @@ export default function App() {
 
     return (
       // Video replay screen
-      <VideoReplayScreen
-        videoSource={{ uri: video.uri }}
-        shareVideo={shareVideo}
-        sendToHugs={sendToHugs}
-        saveVideo={saveVideo}
-        setVideoToUndefined={setVideoToUndefined}
-      />
+      <View>
+        <VideoReplayScreen
+          videoSource={{ uri: video.uri }}
+          shareVideo={shareVideo}
+          sendToHugs={sendToHugs}
+          saveVideo={saveVideo}
+          setVideoToUndefined={setVideoToUndefined}
+        />
+      </View>
 
       // Sticker overlay screen
 
