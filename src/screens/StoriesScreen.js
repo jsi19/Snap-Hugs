@@ -17,7 +17,6 @@ import { StyleSheet } from "react-native";
 import {
   NativeBaseProvider,
   Container,
-  Center,
   VStack,
   HStack,
   Text,
@@ -26,7 +25,26 @@ import {
   Pressable,
 } from "native-base";
 
+// import { getStorage, ref, getDownloadURL } from "firebase/storage";
+
 export default function StoriesScreen({ navigation }) {
+  // // Get a reference to the storage service, which is used to create references in your storage bucket
+  // const storage = getStorage();
+
+  // // Points to the root reference
+  // const storageRef = ref(storage);
+
+  // // Create a storage reference from our storage service that points to 'videos'
+  // const videosRef = ref(storage, "videos");
+
+  // // Create a storage reference from our storage service that points to mother daughter video
+  // const motherDaughterRef = ref(storage, "videos/mother_daughter_quietest.mp4");
+
+  // // Get the download URL
+  // getDownloadURL(motherDaughterRef).then((url) => {
+  //   console.log(url);
+  // });
+
   return (
     <NativeBaseProvider>
       {/* ScrollView enables scrolling. Scroll bar indicator is turned off */}
@@ -38,6 +56,15 @@ export default function StoriesScreen({ navigation }) {
           </Text>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <HStack space={3} justifyContent="center">
+              {/* <StoryComponent
+                imageSource={friend1}
+                videoSource={motherDaughterRef}
+                shortName="Test"
+                longName={motherDaughterRef.fullPath}
+                // longName={url}
+                videoTitle="Mom and me 2002"
+              /> */}
+
               <StoryComponent
                 imageSource={friend1}
                 videoSource={motherDaughterVideo}
