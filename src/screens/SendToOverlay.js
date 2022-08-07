@@ -116,7 +116,7 @@ export default function SendToOverlay(props) {
               {/* Stories boxes */}
               <VStack style={styles.storiesBoxes}>
                 <TouchableOpacity>
-                  <Center h="50" w="365" bg="white" rounded="xl" shadow={2}>
+                  <Center h="50" w="362" bg="white" rounded="xl" shadow={2}>
                     <HStack space={1}>
                       <Image
                         source={bitmoji}
@@ -130,7 +130,7 @@ export default function SendToOverlay(props) {
                   </Center>
                 </TouchableOpacity>
                 <TouchableOpacity>
-                  <Center h="50" w="365" bg="white" rounded="xl" shadow={2}>
+                  <Center h="50" w="362" bg="white" rounded="xl" shadow={2}>
                     <HStack space={1}>
                       <Image
                         source={location}
@@ -164,7 +164,7 @@ export default function SendToOverlay(props) {
                 <TouchableOpacity>
                   <Center
                     h="50"
-                    w="365"
+                    w="362"
                     rounded="xl"
                     shadow={2}
                     style={styles.technology}
@@ -182,13 +182,13 @@ export default function SendToOverlay(props) {
                 <TouchableOpacity>
                   <Center
                     h="50"
-                    w="365"
+                    w="362"
                     rounded="xl"
                     shadow={2}
                     style={styles.engineering}
                   >
                     <Text
-                      style={styles.hugsText}
+                      style={styles.engineeringText}
                       fontSize="md"
                       color="white"
                       bold
@@ -200,7 +200,7 @@ export default function SendToOverlay(props) {
                 <TouchableOpacity>
                   <Center
                     h="50"
-                    w="365"
+                    w="362"
                     rounded="xl"
                     shadow={2}
                     style={styles.activism}
@@ -236,7 +236,7 @@ export default function SendToOverlay(props) {
               {/* Recents boxes */}
               <VStack style={styles.storiesBoxes}>
                 <TouchableOpacity>
-                  <Center h="50" w="365" bg="white" rounded="xl" shadow={2}>
+                  <Center h="50" w="362" bg="white" rounded="xl" shadow={2}>
                     <HStack space={1}>
                       <Image
                         source={bernard}
@@ -250,7 +250,7 @@ export default function SendToOverlay(props) {
                   </Center>
                 </TouchableOpacity>
                 <TouchableOpacity>
-                  <Center h="50" w="365" bg="white" rounded="xl" shadow={2}>
+                  <Center h="50" w="362" bg="white" rounded="xl" shadow={2}>
                     <HStack space={1}>
                       <Image
                         source={ashley}
@@ -264,7 +264,7 @@ export default function SendToOverlay(props) {
                   </Center>
                 </TouchableOpacity>
                 <TouchableOpacity>
-                  <Center h="50" w="365" bg="white" rounded="xl" shadow={2}>
+                  <Center h="50" w="362" bg="white" rounded="xl" shadow={2}>
                     <HStack space={1}>
                       <Image
                         source={shelby}
@@ -280,7 +280,7 @@ export default function SendToOverlay(props) {
               </VStack>
             </View>
             <View style={styles.alphabetBar}>
-              <Center h="510" w="4" bg="light.200" rounded="xl">
+              <Center h="510" w="5" bg="light.200" rounded="xl">
                 <VStack>
                   <Text
                     style={styles.alpabetText}
@@ -323,13 +323,6 @@ export default function SendToOverlay(props) {
                     color="light.400"
                   >
                     F
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    G
                   </Text>
                   <Text
                     style={styles.alpabetText}
@@ -545,7 +538,7 @@ const styles = StyleSheet.create({
     paddingRight: 12,
     paddingTop: 3,
     paddingBottom: 3,
-    marginLeft: 210,
+    marginLeft: 208,
   },
 
   storiesTop: {
@@ -561,7 +554,7 @@ const styles = StyleSheet.create({
   bitmoji: {
     width: 40,
     height: 40,
-    marginLeft: -180,
+    marginLeft: -175,
     marginTop: -3,
   },
 
@@ -572,7 +565,7 @@ const styles = StyleSheet.create({
   location: {
     width: 35,
     height: 35,
-    marginLeft: -163,
+    marginLeft: -154,
     marginTop: 2,
   },
 
@@ -586,21 +579,26 @@ const styles = StyleSheet.create({
   },
 
   hugsText: {
-    marginLeft: -258,
+    marginLeft: -251,
   },
 
   activismText: {
-    marginLeft: -280,
+    marginLeft: -273,
+  },
+
+  engineeringText: {
+    marginLeft: -248,
   },
 
   viewMore: {
-    marginLeft: 315,
+    marginLeft: 312,
+    marginBottom: -15,
   },
 
   recentsBitmoji: {
     width: 40,
     height: 40,
-    marginLeft: -183,
+    marginLeft: -180,
     marginTop: -5,
   },
 
@@ -612,7 +610,7 @@ const styles = StyleSheet.create({
   ashleyBitmoji: {
     width: 40,
     height: 40,
-    marginLeft: -181,
+    marginLeft: -178,
     marginTop: -5,
   },
 
@@ -639,8 +637,8 @@ const styles = StyleSheet.create({
   },
 
   alphabetBar: {
-    marginTop: 120,
-    marginLeft: 9,
+    marginTop: 125,
+    marginLeft: 8,
   },
 
   alpabetText: {
