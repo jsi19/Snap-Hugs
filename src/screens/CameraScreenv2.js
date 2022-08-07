@@ -85,7 +85,7 @@ export default function App() {
       });
     };
 
-    const sendToHugs = () => {
+    const sendTo = () => {
       // Merge video/sticker file
       // FFmpegKit.execute("-i file1.mp4 -c:v mpeg4 file2.mp4").then(
       //   async (session) => {
@@ -108,7 +108,7 @@ export default function App() {
         <VideoReplayScreen
           videoSource={{ uri: video.uri }}
           shareVideo={shareVideo}
-          sendToHugs={sendToHugs}
+          // sendTo={sendTo}
           saveVideo={saveVideo}
           setVideoToUndefined={setVideoToUndefined}
         />

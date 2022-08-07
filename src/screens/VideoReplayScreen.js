@@ -1,12 +1,13 @@
 import { StyleSheet, View, TouchableOpacity } from "react-native";
 import { Image, NativeBaseProvider, Center } from "native-base";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import React, { useState } from "react";
+import React from "react";
 import Sticker from "../components/StickerComponent";
 
 import VideoComponent from "../components/VideoComponent";
 import VideoReplayOptions from "../components/VideoReplayOptions";
 import bitmoji from "../../assets/top_nav_bar/new_bitmoji.png";
+import SendToOverlay from "./SendToOverlay";
 
 export default function VideoReplayScreen(props) {
   return (
@@ -46,8 +47,9 @@ export default function VideoReplayScreen(props) {
         </TouchableOpacity>
 
         {/* Send to button */}
-        <TouchableOpacity style={styles.sendButton} onPress={props.sendTo}>
+        <TouchableOpacity style={styles.sendButton}>
           <MaterialCommunityIcons name="send" size={30} color="#FFFC00" />
+          <SendToOverlay />
         </TouchableOpacity>
       </Center>
 
@@ -72,14 +74,14 @@ const styles = StyleSheet.create({
   },
 
   close: {
-    marginTop: 57,
+    marginTop: 50,
     right: -17,
   },
 
   bottomButtonsContainer: {
     position: "absolute",
-    marginTop: 645,
-    marginLeft: 357,
+    marginTop: 630,
+    marginLeft: 345,
   },
 
   saveButton: {
@@ -96,7 +98,9 @@ const styles = StyleSheet.create({
   },
 
   sendButton: {
-    transform: [{ rotate: "-30deg" }],
+    transform: [{ rotate: "-45deg" }],
+    width: 50,
     marginTop: 20,
+    marginLeft: 20,
   },
 });

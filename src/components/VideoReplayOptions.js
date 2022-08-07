@@ -4,13 +4,6 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 export default function VideoReplayOptions(props) {
   return (
     <View style={styles.replayOptions}>
-      {/* <TouchableOpacity
-        style={styles.close}
-        onPress={props.setVideoToUndefined}
-      >
-        <MaterialCommunityIcons name="close" size={25} color="white" />
-      </TouchableOpacity> */}
-
       <TouchableOpacity>
         <MaterialCommunityIcons
           style={styles.formatText}
@@ -94,15 +87,10 @@ const styles = StyleSheet.create({
   replayOptions: {
     position: "absolute",
     right: 10,
-    paddingTop: 85,
+    paddingTop: 80,
     height: 250,
     width: 40,
     padding: 5,
-  },
-
-  close: {
-    marginTop: 5,
-    right: 350,
   },
 
   formatText: {
