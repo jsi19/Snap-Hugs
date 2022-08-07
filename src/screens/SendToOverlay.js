@@ -2,15 +2,7 @@ import { StyleSheet, View, TouchableOpacity } from "react-native";
 import GestureRecognizer from "react-native-swipe-gestures";
 import React, { useState } from "react";
 import Modal from "react-native-modal";
-import {
-  Center,
-  Text,
-  Circle,
-  Pressable,
-  HStack,
-  VStack,
-  Image,
-} from "native-base";
+import { Center, Text, Pressable, HStack, VStack, Image } from "native-base";
 
 import carrot from "../../assets/images/send-to-nav-bar/carrot.png";
 import magnifyingGlass from "../../assets/images/send-to-nav-bar/magnifying_glass.png";
@@ -281,7 +273,7 @@ export default function SendToOverlay(props) {
             </View>
             <View style={styles.alphabetBar}>
               <TouchableOpacity>
-                <Center h="510" w="5" bg="light.200" rounded="xl">
+                <Center h="510" w="4" bg="light.200" rounded="xl">
                   <VStack>
                     <Text
                       style={styles.alpabetText}
@@ -641,7 +633,7 @@ const styles = StyleSheet.create({
 
   alphabetBar: {
     marginTop: 125,
-    marginLeft: 8,
+    marginLeft: 10,
   },
 
   alpabetText: {
