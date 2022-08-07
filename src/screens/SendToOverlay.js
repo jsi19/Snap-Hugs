@@ -15,30 +15,21 @@ export default function StoriesOverlay(props) {
   };
 
   return (
-    // Dismiss modal/overlay on swipe up
-    <GestureRecognizer style={{ flex: 1 }} onSwipeUp={hideModal}>
-      <Pressable onPress={() => setModalVisible(true)}>
-        <Circle size="74px" opacity={0} />
-      </Pressable>
+    <>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => setModalVisible(true)}
+      ></TouchableOpacity>
+
       <Modal
         isVisible={isModalVisible}
-        animationIn="slideInDown"
-        animationOut="slideOutUp"
+        animationIn="slideInUp"
+        animationOut="slideOutDown"
         animationInTiming={250}
         animationOutTiming={250}
         backdropTransitionOutTiming={0}
       >
         <View style={styles.modalView}>
-          <HugVideoNav
-            shortName={props.shortName}
-            longName={props.longName}
-            videoTitle={props.videoTitle}
-            onPress={hideModal}
-          />
-          <VideoComponent
-            style={styles.video}
-            videoSource={props.videoSource}
-          />
           <Pressable style={styles.modalMoreButton} onPress={hideModal}>
             <Center h="35" w="70" bg="white" rounded="3xl">
               <Text bold fontSize="sm">
@@ -48,7 +39,7 @@ export default function StoriesOverlay(props) {
           </Pressable>
         </View>
       </Modal>
-    </GestureRecognizer>
+    </>
   );
 }
 
@@ -71,5 +62,14 @@ const styles = StyleSheet.create({
   modalMoreButton: {
     alignSelf: "center",
     marginTop: -45,
+  },
+
+  button: {
+    width: 100,
+    height: 40,
+    padding: 10,
+    borderRadius: 50,
+    backgroundColor: "#FFFC00",
+    color: "#000",
   },
 });
