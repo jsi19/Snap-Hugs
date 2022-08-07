@@ -1,90 +1,62 @@
-import { StyleSheet, View, SafeAreaView, TouchableOpacity } from "react-native";
-import { Text, NativeBaseProvider, HStack } from "native-base";
+import { StyleSheet, View, TouchableOpacity } from "react-native";
+import { Image, NativeBaseProvider, Center } from "native-base";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import React, { useState } from "react";
 import Sticker from "../components/StickerComponent";
+
 import VideoComponent from "../components/VideoComponent";
 import VideoReplayOptions from "../components/VideoReplayOptions";
+import bitmoji from "../../assets/top_nav_bar/new_bitmoji.png";
 
 export default function VideoReplayScreen(props) {
   return (
     <NativeBaseProvider>
-      <SafeAreaView style={styles.videoPlaybackContainer}>
-        <VideoComponent
-          style={styles.videoPlayback}
-          videoSource={props.videoSource}
-        />
+      <VideoComponent
+        style={styles.videoPlayback}
+        videoSource={props.videoSource}
+      />
 
-        {/* Options */}
-        <VideoReplayOptions />
+      {/* Options */}
+      <VideoReplayOptions />
 
-        {/* Close view button*/}
-        <View style={styles.closeContainer}>
-          <TouchableOpacity
-            style={styles.close}
-            onPress={props.setVideoToUndefined}
-          >
-            <MaterialCommunityIcons name="close" size={25} color="white" />
-          </TouchableOpacity>
-        </View>
+      {/* Close view button*/}
+      <View style={styles.closeContainer}>
+        <TouchableOpacity
+          style={styles.close}
+          onPress={props.setVideoToUndefined}
+        >
+          <MaterialCommunityIcons name="close" size={25} color="white" />
+        </TouchableOpacity>
+      </View>
 
-        {/* Bottom Buttons */}
-        <View style={styles.recordingOptions}>
-          {/* <HStack space={2} justifyContent="center"> */}
-          {/* Save button */}
-          {/* <TouchableOpacity onPress={props.saveVideo}>
-            <Center w="40" h="10" bg="white" opacity={50} rounded="3xl">
-              <HStack space={2} justifyContent="center">
-                <MaterialCommunityIcons
-                  name="tray-arrow-down"
-                  size={22}
-                  color="black"
-                />
-                <Text fontSize="sm" bold style={styles.buttonText}>
-                  Save
-                </Text>
-              </HStack>
-            </Center>
-          </TouchableOpacity> */}
+      {/* Bottom Buttons */}
+      <Center style={styles.bottomButtonsContainer}>
+        {/* Save button */}
+        <TouchableOpacity style={styles.saveButton} onPress={props.saveVideo}>
+          <MaterialCommunityIcons
+            name="tray-arrow-down"
+            size={30}
+            color="white"
+          />
+        </TouchableOpacity>
 
-          {/* Story button */}
-          {/* <TouchableOpacity onPress={props.saveVideo}>
-              <Center w="43" h="20" bg="white" opacity={50} rounded="3xl">
-                <HStack space={2} justifyContent="center">
-                  <MaterialCommunityIcons
-                    name="tray-arrow-down"
-                    size={22}
-                    color="black"
-                  />
-                  <Text fontSize="sm" bold style={styles.buttonText}>
-                    Story
-                  </Text>
-                </HStack>
-              </Center>
-            </TouchableOpacity>
-          </HStack> */}
+        {/* Story button */}
+        <TouchableOpacity style={styles.storyButton}>
+          <Image style={styles.bitmoji} source={bitmoji} alt="bitmoji" />
+        </TouchableOpacity>
 
-          {/* Send to button */}
-          <TouchableOpacity style={styles.button}>
-            <HStack space={1} justifyContent="center">
-              <Text fontSize="xs" bold>
-                Send To
-              </Text>
-              <MaterialCommunityIcons name="send" size={22} color="black" />
-            </HStack>
-          </TouchableOpacity>
-          {/* <Button title="Share" onPress={props.shareVideo} />
-          <Button title="Send to Hugs" onPress={props.sendToHugs} /> */}
-        </View>
-        {/* Make sticker appear only if selected */}
-        <Sticker />
-      </SafeAreaView>
+        {/* Send to button */}
+        <TouchableOpacity style={styles.sendButton} onPress={props.sendTo}>
+          <MaterialCommunityIcons name="send" size={30} color="#FFFC00" />
+        </TouchableOpacity>
+      </Center>
+
+      <Sticker />
     </NativeBaseProvider>
   );
 }
 
 const styles = StyleSheet.create({
-  videoPlaybackContainer: { backgroundColor: "#000", position: "relative" },
-
   videoPlayback: {
     position: "relative",
     justifyContent: "center",
@@ -92,7 +64,7 @@ const styles = StyleSheet.create({
     flex: 0,
     marginLeft: -35,
     width: 500,
-    height: 780,
+    height: 820,
   },
 
   closeContainer: {
@@ -104,19 +76,27 @@ const styles = StyleSheet.create({
     right: -17,
   },
 
-  recordingOptions: {
+  bottomButtonsContainer: {
     position: "absolute",
-    alignSelf: "center",
-    marginTop: 750,
-    // marginLeft: 285,
+    marginTop: 645,
+    marginLeft: 357,
   },
 
-  button: {
-    width: 100,
+  saveButton: {
+    marginTop: 5,
+  },
+
+  bitmoji: {
     height: 40,
-    padding: 10,
-    borderRadius: 50,
-    backgroundColor: "#FFFC00",
-    color: "#000",
+    width: 40,
+  },
+
+  storyButton: {
+    marginTop: 20,
+  },
+
+  sendButton: {
+    transform: [{ rotate: "-30deg" }],
+    marginTop: 20,
   },
 });
