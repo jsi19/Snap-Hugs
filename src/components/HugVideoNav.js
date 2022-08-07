@@ -10,7 +10,7 @@ export default function HugVideoNav(props) {
     <HStack style={styles.modalNav}>
       <HStack space={4} alignItems="center">
         <Pressable onPress={props.onPress}>
-          <Image source={carrot} alt="carrot"></Image>
+          <Image style={styles.carrot} source={carrot} alt="carrot"></Image>
         </Pressable>
         <Divider thickness="2" orientation="vertical" />
         <VStack>
@@ -25,10 +25,14 @@ export default function HugVideoNav(props) {
 
       <HStack style={styles.modalNavRightSide} space={2}>
         <Pressable onPress={props.onPress}>
-          <Image source={bookmark} alt="bookmark"></Image>
+          <Image
+            style={styles.bookmark}
+            source={bookmark}
+            alt="bookmark"
+          ></Image>
         </Pressable>
         <Pressable onPress={props.onPress}>
-          <Image source={threeDots} alt="menu"></Image>
+          <Image style={styles.threeDots} source={threeDots} alt="menu"></Image>
         </Pressable>
       </HStack>
     </HStack>
@@ -48,5 +52,20 @@ const styles = StyleSheet.create({
 
   modalNavRightSide: {
     marginLeft: "auto",
+  },
+
+  carrot: {
+    width: 38,
+    height: 38,
+  },
+
+  bookmark: {
+    width: 36,
+    height: 36,
+  },
+
+  threeDots: {
+    width: 38,
+    height: 38,
   },
 });
