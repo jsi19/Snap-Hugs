@@ -2,17 +2,12 @@ import React from 'react'
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import {
   NativeBaseProvider,
-  Container,
   Center,
   VStack,
   Text,
-  HStack,
-  Circle,
   ScrollView,
-  Pressable,
   Image,
 } from "native-base";
-import { useHandler } from 'react-native-reanimated';
 
 export default function SnapHugsScreen({ navigation }) {
   return (
@@ -21,7 +16,7 @@ export default function SnapHugsScreen({ navigation }) {
       <ScrollView showsVerticalScrollIndicator={false}>
 
         {/* About Hugs section */}
-        <Center style = {styles.game_mini}>
+        <Center style = {styles.about_hugs}>
           <Image h="100%" w="400" source={require("../../assets/hug_list/about_hug.png")} alt="About Hug"/>
         </Center>
 
@@ -49,22 +44,13 @@ export default function SnapHugsScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  game_mini_section: {
-    flex: 6,
-    padding: 10,
-    marginLeft: 0,
-    marginTop: -10,
-},
-game_mini: {
-    height: 150,
-    width: 395,
-    alignSelf: "center",
-    marginTop : 10,
-    paddingBottom : -80,
+  about_hugs: {
+      height: 150,
+      width: 395,
+      alignSelf: "center",
+      marginTop : 10,
+      paddingBottom : -80,
   },
-  betaLogo: {
-    alignItems: 'center',
-},
   hug_communities: {
     marginTop: -50,
     margin: 16,
