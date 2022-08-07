@@ -1,5 +1,4 @@
 import { StyleSheet, View, TouchableOpacity } from "react-native";
-import { Center, VStack, NativeBaseProvider } from "native-base";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 export default function CameraOptionsv2(props) {
@@ -52,7 +51,7 @@ export default function CameraOptionsv2(props) {
 const styles = StyleSheet.create({
   cameraOptions: {
     position: "absolute",
-    right: 5,
+    right: 10,
     paddingTop: 40,
     height: 250,
     width: 40,
