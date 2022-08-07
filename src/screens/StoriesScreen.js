@@ -17,7 +17,6 @@ import { StyleSheet } from "react-native";
 import {
   NativeBaseProvider,
   Container,
-  Center,
   VStack,
   HStack,
   Text,
