@@ -1,6 +1,6 @@
-import carrot from "../../assets/stories-nav-bar/down_carrot.png";
+import carrot from "../../assets/TechnologyHug/beta_test/down_arrow.png";
 import bookmark from "../../assets/stories-nav-bar/charm_bookmark.png";
-import threeDots from "../../assets/stories-nav-bar/bi_three-dots-vertical.png";
+import threeDots from "../../assets/TechnologyHug/beta_test/three_dots.png";
 import VideoComponent from "../components/VideoComponent";
 import React, { useState } from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";

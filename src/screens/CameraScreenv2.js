@@ -1,18 +1,18 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Button,
-  SafeAreaView,
-  TouchableOpacity,
-} from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { useEffect, useState, useRef } from "react";
+import { NativeBaseProvider } from "native-base";
+
 import { Camera, CameraType } from "expo-camera";
 import { shareAsync } from "expo-sharing";
 import * as MediaLibrary from "expo-media-library";
 import Ionicons from "react-native-vector-icons/Ionicons";
+
+// import { FFmpegKit } from "ffmpeg-kit-react-native";
+
+import VideoReplayScreen from "./VideoReplayScreen";
+import CameraOptionsv2 from "../components/CameraOptionsv2";
+import CircularProgressIndicator from "../components/CircularProgressIndicator";
 import Sticker from "../components/StickerComponent";
-import VideoComponent from "../components/VideoComponent";
 
 export default function App() {
   let cameraRef = useRef();
@@ -23,6 +23,8 @@ export default function App() {
 
   const [isRecording, setIsRecording] = useState(false);
   const [video, setVideo] = useState();
+
+  const setVideoToUndefined = () => setVideo(undefined);
 
   useEffect(() => {
     (async () => {
@@ -73,92 +75,94 @@ export default function App() {
   if (video) {
     let shareVideo = () => {
       shareAsync(video.uri).then(() => {
-        setVideo(undefined);
+        setVideoToUndefined();
       });
     };
 
     let saveVideo = () => {
       MediaLibrary.saveToLibraryAsync(video.uri).then(() => {
-        setVideo(undefined);
+        setVideoToUndefined();
       });
     };
 
+    const sendTo = () => {
+      // Merge video/sticker file
+      // FFmpegKit.execute("-i file1.mp4 -c:v mpeg4 file2.mp4").then(
+      //   async (session) => {
+      //     const returnCode = await session.getReturnCode();
+      //     if (ReturnCode.isSuccess(returnCode)) {
+      //       // SUCCESS
+      //     } else if (ReturnCode.isCancel(returnCode)) {
+      //       // CANCEL
+      //     } else {
+      //       // ERROR
+      //     }
+      //   }
+      // );
+      // Push file to database so it appears on stories page
+    };
+
     return (
-      <SafeAreaView style={styles.videoPlaybackContainer}>
-        <VideoComponent
-          style={styles.videoPlayback}
+      // Video replay screen
+      <View>
+        <VideoReplayScreen
           videoSource={{ uri: video.uri }}
+          shareVideo={shareVideo}
+          // sendTo={sendTo}
+          saveVideo={saveVideo}
+          setVideoToUndefined={setVideoToUndefined}
         />
-        <View style={styles.recordingOptions}>
-          <Button title="Share" onPress={shareVideo} />
-          {hasMediaLibraryPermission ? (
-            <Button title="Save" onPress={saveVideo} />
-          ) : undefined}
-          <Button title="Discard" onPress={() => setVideo(undefined)} />
-        </View>
-        <Sticker />
-      </SafeAreaView>
+      </View>
+
+      // Sticker overlay screen
+
+      // If sticker selected, show sticker on video replay screen
+
+      // Send to screen (Hugs only appear if sticker selected)
     );
   }
-
-  return (
-    <Camera style={styles.camera} ref={cameraRef} type={type}>
-      <View style={styles.button}>
-        <TouchableOpacity onPress={isRecording ? stopRecording : recordVideo}>
-          {/* <TouchableOpacity onPress={flipCamera}> */}
-          <Ionicons
-            style={isRecording ? styles.isRecording : styles.notRecording}
-            name={isRecording ? "ellipse" : "ellipse-outline"}
-            size={isRecording ? 115 : 100}
-            color="white"
-          />
-        </TouchableOpacity>
-      </View>
-      {/* // Put these in own component */}
-      <View style={styles.cameraOptions}>
-        <TouchableOpacity onPress={flipCamera}>
-          <Ionicons
-            style={styles.flipIcon}
-            name="repeat"
-            size={30}
-            color="white"
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Ionicons
-            style={styles.flashIcon}
-            name="ios-flash-off-outline"
-            size={30}
-            color="white"
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Ionicons
-            style={styles.videoIcon}
-            name="ios-film-outline"
-            size={30}
-            color="white"
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Ionicons
-            style={styles.musicIcon}
-            name="ios-musical-notes-outline"
-            size={30}
-            color="white"
-          />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Ionicons
-            style={styles.nightModeIcon}
-            name="ios-moon-outline"
-            size={30}
-            color="white"
-          />
-        </TouchableOpacity>
-      </View>
-    </Camera>
-  );
+  if (!isRecording) {
+    return (
+      <NativeBaseProvider>
+        <Camera style={styles.camera} ref={cameraRef} type={type}>
+          <View style={styles.button}>
+            <TouchableOpacity
+              onPress={isRecording ? stopRecording : recordVideo}
+            >
+              <Ionicons
+                style={isRecording ? styles.isRecording : styles.notRecording}
+                name={isRecording ? "ellipse" : "ellipse-outline"}
+                size={isRecording ? 115 : 100}
+                color="white"
+              />
+            </TouchableOpacity>
+          </View>
+          <CameraOptionsv2 flipCamera={flipCamera} />
+        </Camera>
+      </NativeBaseProvider>
+    );
+  } else {
+    return (
+      <NativeBaseProvider>
+        <Camera style={styles.camera} ref={cameraRef} type={type}>
+          <View style={styles.button}>
+            <TouchableOpacity
+              onPress={isRecording ? stopRecording : recordVideo}
+            >
+              <Ionicons
+                style={isRecording ? styles.isRecording : styles.notRecording}
+                name={isRecording ? "ellipse" : "ellipse-outline"}
+                size={isRecording ? 115 : 100}
+                color="white"
+              />
+              <CircularProgressIndicator />
+            </TouchableOpacity>
+          </View>
+          <CameraOptionsv2 flipCamera={flipCamera} />
+        </Camera>
+      </NativeBaseProvider>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -172,28 +176,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
-  videoPlaybackContainer: { position: "relative" },
-
-  videoPlayback: {
-    // alignSelf: "center",
-    position: "relative",
-    justifyContent: "center",
-    alignItems: "center",
-    flex: 0,
-    marginLeft: -35,
-    width: 500,
-    height: 780,
-  },
-
   isRecording: {
-    marginTop: -5,
     opacity: 0.4,
-  },
-
-  recordingOptions: {
-    position: "absolute",
-    alignSelf: "center",
-    marginTop: 700,
+    marginTop: -10,
+    marginLeft: 11,
   },
 
   cameraOptions: {

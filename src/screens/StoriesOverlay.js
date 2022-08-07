@@ -4,7 +4,6 @@ import { View, StyleSheet } from "react-native";
 import GestureRecognizer from "react-native-swipe-gestures";
 import Modal from "react-native-modal";
 import HugVideoNav from "../components/HugVideoNav";
-
 import { Center, Text, Circle, Pressable } from "native-base";
 
 export default function StoriesOverlay(props) {

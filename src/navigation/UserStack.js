@@ -58,7 +58,10 @@ export default function UserStack() {
               });
           }}
         >
-          <Image alt="Avatar" source={require("../../assets/top_nav_bar/avatar.png")} />
+          <Image
+            alt="Avatar"
+            source={require("../../assets/top_nav_bar/avatar.png")}
+          />
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.nav_icon}
@@ -66,7 +69,10 @@ export default function UserStack() {
             alert("Search!");
           }}
         >
-          <Image alt="Search" source={require("../../assets/top_nav_bar/search.png")} />
+          <Image
+            alt="Search"
+            source={require("../../assets/top_nav_bar/search.png")}
+          />
         </TouchableOpacity>
       </HeaderButtons>
     ),
@@ -79,7 +85,10 @@ export default function UserStack() {
             alert("Add friend");
           }}
         >
-          <Image alt="Add friend" source={require("../../assets/top_nav_bar/add_friend.png")} />
+          <Image
+            alt="Add friend"
+            source={require("../../assets/top_nav_bar/add_friend.png")}
+          />
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.nav_icon}
@@ -87,7 +96,10 @@ export default function UserStack() {
             alert("More!");
           }}
         >
-          <Image alt="More" source={require("../../assets/top_nav_bar/more.png")} />
+          <Image
+            alt="More"
+            source={require("../../assets/top_nav_bar/more.png")}
+          />
         </TouchableOpacity>
       </HeaderButtons>
     ),
