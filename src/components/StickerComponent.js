@@ -7,7 +7,7 @@ export default function Sticker() {
   return (
     <Gestures
       rotatable={true}
-      rotate={"0deg"}
+      rotate={"15deg"}
       scalable={true}
       onEnd={(event, styles) => {
         console.log(styles);
@@ -21,7 +21,7 @@ export default function Sticker() {
 const styles = StyleSheet.create({
   sticker: {
     top: 400,
-    left: 25,
+    left: 225,
     width: 200,
     height: 200,
   },
