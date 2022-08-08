@@ -2,15 +2,7 @@ import { StyleSheet, View, TouchableOpacity } from "react-native";
 import GestureRecognizer from "react-native-swipe-gestures";
 import React, { useState } from "react";
 import Modal from "react-native-modal";
-import {
-  Center,
-  Text,
-  Circle,
-  Pressable,
-  HStack,
-  VStack,
-  Image,
-} from "native-base";
+import { Center, Text, Pressable, HStack, VStack, Image } from "native-base";
 
 import carrot from "../../assets/images/send-to-nav-bar/carrot.png";
 import magnifyingGlass from "../../assets/images/send-to-nav-bar/magnifying_glass.png";
@@ -116,7 +108,7 @@ export default function SendToOverlay(props) {
               {/* Stories boxes */}
               <VStack style={styles.storiesBoxes}>
                 <TouchableOpacity>
-                  <Center h="50" w="365" bg="white" rounded="xl" shadow={2}>
+                  <Center h="50" w="362" bg="white" rounded="xl" shadow={2}>
                     <HStack space={1}>
                       <Image
                         source={bitmoji}
@@ -130,7 +122,7 @@ export default function SendToOverlay(props) {
                   </Center>
                 </TouchableOpacity>
                 <TouchableOpacity>
-                  <Center h="50" w="365" bg="white" rounded="xl" shadow={2}>
+                  <Center h="50" w="362" bg="white" rounded="xl" shadow={2}>
                     <HStack space={1}>
                       <Image
                         source={location}
@@ -161,10 +153,12 @@ export default function SendToOverlay(props) {
               </Text>
               {/* Hugs boxes */}
               <VStack style={styles.storiesBoxes} space={1}>
-                <TouchableOpacity>
+                <TouchableOpacity
+                  onPress={props.showToastAndReturnToCameraScreen}
+                >
                   <Center
                     h="50"
-                    w="365"
+                    w="362"
                     rounded="xl"
                     shadow={2}
                     style={styles.technology}
@@ -182,13 +176,13 @@ export default function SendToOverlay(props) {
                 <TouchableOpacity>
                   <Center
                     h="50"
-                    w="365"
+                    w="362"
                     rounded="xl"
                     shadow={2}
                     style={styles.engineering}
                   >
                     <Text
-                      style={styles.hugsText}
+                      style={styles.engineeringText}
                       fontSize="md"
                       color="white"
                       bold
@@ -200,7 +194,7 @@ export default function SendToOverlay(props) {
                 <TouchableOpacity>
                   <Center
                     h="50"
-                    w="365"
+                    w="362"
                     rounded="xl"
                     shadow={2}
                     style={styles.activism}
@@ -236,7 +230,7 @@ export default function SendToOverlay(props) {
               {/* Recents boxes */}
               <VStack style={styles.storiesBoxes}>
                 <TouchableOpacity>
-                  <Center h="50" w="365" bg="white" rounded="xl" shadow={2}>
+                  <Center h="50" w="362" bg="white" rounded="xl" shadow={2}>
                     <HStack space={1}>
                       <Image
                         source={bernard}
@@ -250,7 +244,7 @@ export default function SendToOverlay(props) {
                   </Center>
                 </TouchableOpacity>
                 <TouchableOpacity>
-                  <Center h="50" w="365" bg="white" rounded="xl" shadow={2}>
+                  <Center h="50" w="362" bg="white" rounded="xl" shadow={2}>
                     <HStack space={1}>
                       <Image
                         source={ashley}
@@ -264,7 +258,7 @@ export default function SendToOverlay(props) {
                   </Center>
                 </TouchableOpacity>
                 <TouchableOpacity>
-                  <Center h="50" w="365" bg="white" rounded="xl" shadow={2}>
+                  <Center h="50" w="362" bg="white" rounded="xl" shadow={2}>
                     <HStack space={1}>
                       <Image
                         source={shelby}
@@ -280,200 +274,195 @@ export default function SendToOverlay(props) {
               </VStack>
             </View>
             <View style={styles.alphabetBar}>
-              <Center h="510" w="4" bg="light.200" rounded="xl">
-                <VStack>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    A
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    B
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    C
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    D
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    E
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    F
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    G
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    G
-                  </Text>
+              <TouchableOpacity>
+                <Center h="510" w="4" bg="light.200" rounded="xl">
+                  <VStack>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      A
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      B
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      C
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      D
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      E
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      F
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      G
+                    </Text>
 
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    H
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    I
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    J
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    K
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    L
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    M
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    N
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    O
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    P
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    Q
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    R
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    S
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    T
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    U
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    V
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    W
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    X
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    Y
-                  </Text>
-                  <Text
-                    style={styles.alpabetText}
-                    fontSize="xs"
-                    color="light.400"
-                  >
-                    Z
-                  </Text>
-                </VStack>
-              </Center>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      H
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      I
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      J
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      K
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      L
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      M
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      N
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      O
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      P
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      Q
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      R
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      S
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      T
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      U
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      V
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      W
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      X
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      Y
+                    </Text>
+                    <Text
+                      style={styles.alpabetText}
+                      fontSize="xs"
+                      color="light.400"
+                    >
+                      Z
+                    </Text>
+                  </VStack>
+                </Center>
+              </TouchableOpacity>
             </View>
           </HStack>
         </View>
@@ -515,13 +504,14 @@ const styles = StyleSheet.create({
   magnifyingGlass: {
     width: 20,
     height: 19,
-    marginRight: 90,
+    marginLeft: 0,
+    marginRight: 80,
   },
 
   peopleIcon: {
     width: 20,
     height: 19,
-    marginLeft: 135,
+    marginLeft: 155,
   },
 
   searchBar: {
@@ -545,7 +535,7 @@ const styles = StyleSheet.create({
     paddingRight: 12,
     paddingTop: 3,
     paddingBottom: 3,
-    marginLeft: 210,
+    marginLeft: 208,
   },
 
   storiesTop: {
@@ -561,7 +551,7 @@ const styles = StyleSheet.create({
   bitmoji: {
     width: 40,
     height: 40,
-    marginLeft: -180,
+    marginLeft: -175,
     marginTop: -3,
   },
 
@@ -572,7 +562,7 @@ const styles = StyleSheet.create({
   location: {
     width: 35,
     height: 35,
-    marginLeft: -163,
+    marginLeft: -151,
     marginTop: 2,
   },
 
@@ -586,21 +576,26 @@ const styles = StyleSheet.create({
   },
 
   hugsText: {
-    marginLeft: -258,
+    marginLeft: -251,
   },
 
   activismText: {
-    marginLeft: -280,
+    marginLeft: -272,
+  },
+
+  engineeringText: {
+    marginLeft: -249,
   },
 
   viewMore: {
-    marginLeft: 315,
+    marginLeft: 312,
+    marginBottom: -15,
   },
 
   recentsBitmoji: {
     width: 40,
     height: 40,
-    marginLeft: -183,
+    marginLeft: -180,
     marginTop: -5,
   },
 
@@ -612,7 +607,7 @@ const styles = StyleSheet.create({
   ashleyBitmoji: {
     width: 40,
     height: 40,
-    marginLeft: -181,
+    marginLeft: -178,
     marginTop: -5,
   },
 
@@ -639,8 +634,8 @@ const styles = StyleSheet.create({
   },
 
   alphabetBar: {
-    marginTop: 120,
-    marginLeft: 9,
+    marginTop: 125,
+    marginLeft: 10,
   },
 
   alpabetText: {

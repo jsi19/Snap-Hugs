@@ -1,4 +1,5 @@
 import React from "react";
+import { RootSiblingParent } from "react-native-root-siblings";
 
 // Firebase
 import "./firebase";
@@ -7,5 +8,9 @@ import "./firebase";
 import RootNavigation from "./src/navigation/RootNavigation";
 
 export default function App() {
-  return <RootNavigation />;
+  return (
+    <RootSiblingParent>
+      <RootNavigation />
+    </RootSiblingParent>
+  );
 }
