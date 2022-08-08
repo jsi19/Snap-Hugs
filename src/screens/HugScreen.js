@@ -1,5 +1,6 @@
 import bertrandVideo from "../../assets/video/bertrandVideo.mp4";
 import daveVideo from "../../assets/video/dave_video.mp4";
+import vanessaVideo from "../../assets/video/vanessa_video.mp4";
 import person1 from "../../assets/TechnologyHug/stories/career_story1.png";
 import person2 from "../../assets/TechnologyHug/stories/career_story2.png";
 import person3 from "../../assets/TechnologyHug/stories/career_story3.png";
@@ -64,7 +65,7 @@ export default function HugScreen({ navigation }) {
             <HStack space={3} justifyContent="center" marginTop={2}>
               <HugStoryComponent
                 imageSource={person1}
-                videoSource={daveVideo}
+                videoSource={vanessaVideo}
                 shortName="Vanessa"
                 longName="Vanessa Malabanan"
                 videoTitle="Snap Engineering Academy Scholar"
