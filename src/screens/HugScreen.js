@@ -9,8 +9,6 @@ import bertrandImage from "../../assets/TechnologyHug/insights/insight1.png";
 
 import React, { useState } from "react";
 import { View, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
-import GestureRecognizer from "react-native-swipe-gestures";
-import Modal from "react-native-modal";
 import HugStoryComponent from "../components/HugStoryComponent";
 import InsightComponent from "../components/InsightComponent";
 import {
@@ -18,25 +16,14 @@ import {
   ChevronRightIcon,
   Container,
   Center,
-  VStack,
   HStack,
   Text,
-  Circle,
   ScrollView,
-  Pressable,
   Image,
-  ImageBackground,
-  Divider,
-  Heading,
   Button,
 } from "native-base";
 
-import StoriesOverlay from "./StoriesOverlay";
 import BetaTestingOverlay from "./BetaTestingOverlay";
-import PartnerScreen from "./PartnerScreen";
-
-var height = Dimensions.get("window").height;
-var width = Dimensions.get("window").width;
 
 export default function HugScreen({ navigation }) {
   return (
@@ -78,9 +65,9 @@ export default function HugScreen({ navigation }) {
               <HugStoryComponent
                 imageSource={person1}
                 videoSource={daveVideo}
-                shortName="Dave S"
-                longName="Dave Smith"
-                videoTitle="Computer Science Professor at PCC"
+                shortName="Vanessa"
+                longName="Vanessa Malabanan"
+                videoTitle="Snap Engineering Academy Scholar"
               />
               <HugStoryComponent
                 imageSource={person2}
@@ -90,19 +77,19 @@ export default function HugScreen({ navigation }) {
               />
               <HugStoryComponent
                 imageSource={person3}
-                shortName="Rex"
+                shortName="America"
                 longName="Alvin Castillo"
                 videoTitle="A Day in the Life"
               />
               <HugStoryComponent
                 imageSource={person4}
-                shortName="Albert"
+                shortName="Rex"
                 longName="Alvin Castillo"
                 videoTitle="A Day in the Life"
               />
               <HugStoryComponent
                 imageSource={person5}
-                shortName="Alex"
+                shortName="Albert"
                 longName="Alvin Castillo"
                 videoTitle="A Day in the Life"
               />
@@ -119,14 +106,11 @@ export default function HugScreen({ navigation }) {
             <HStack space={3} justifyContent="center" marginTop={2}>
               <InsightComponent
                 imageSource={bertrandImage}
-                videoSource={bertrandVideo}
+                videoSource={daveVideo}
                 shortName="Trung"
-                longName="Bertrand Saint-Preux"
-                videoTitle="Product Manager for Snap's Inclusive Camera"
+                longName="Dave Smith"
+                videoTitle="Computer Science Professor @ PCC"
               />
-              {/* <Center h="170" w="170" bg="light.300" rounded="2xl">
-                  <Image h="173" w="173" source={require("../../assets/TechnologyHug/insights/insight1.png")} alt={"Industry Insight 1"} />
-                </Center> */}
               <Center h="170" w="170" bg="light.300" rounded="2xl">
                 <Image
                   h="170"
@@ -190,11 +174,6 @@ export default function HugScreen({ navigation }) {
 
         {/* Beta Testing section */}
         <BetaTestingOverlay />
-        {/* <Container style={styles.stories_partners} justifyContent="center">
-            <Text bold fontSize="lg" color="white">
-              Become a Beta Tester
-            </Text>
-          </Container> */}
 
         {/* Get Involved section
           <Container style={styles.stories_partners}>
