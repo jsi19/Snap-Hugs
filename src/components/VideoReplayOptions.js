@@ -1,5 +1,6 @@
 import { StyleSheet, View, TouchableOpacity } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import StickerOverlay from "../screens/StickerOverlay";
 
 export default function VideoReplayOptions(props) {
   return (
@@ -29,6 +30,7 @@ export default function VideoReplayOptions(props) {
           size={35}
           color="white"
         />
+        <StickerOverlay />
       </TouchableOpacity>
 
       <TouchableOpacity>
