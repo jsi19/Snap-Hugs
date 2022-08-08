@@ -33,12 +33,17 @@ import sunflower from "../../assets/sticker-overlay/icons8-sunflower-100.png";
 import violet from "../../assets/sticker-overlay/icons8-violet-flower-100.png";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
-export default function StickerOverlay() {
+export default function StickerOverlay(props) {
   // Set modal visibility
   const [isModalVisible, setModalVisible] = useState(false);
 
   const hideModal = () => {
     setModalVisible(false);
+  };
+
+  const hideModalAndPlaceStickerOnVideoReplayScreen = () => {
+    hideModal();
+    props.showSticker();
   };
 
   return (
@@ -94,11 +99,14 @@ export default function StickerOverlay() {
               </TouchableOpacity>
             </HStack>
           </View>
+
           {/* Stickers */}
           <VStack style={styles.stickerContainer} space={7}>
             {/* Row 1 */}
             <HStack>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={hideModalAndPlaceStickerOnVideoReplayScreen}
+              >
                 <Image source={beach} alt="beach" style={styles.beach} />
               </TouchableOpacity>
               <TouchableOpacity>

@@ -30,7 +30,7 @@ export default function VideoReplayOptions(props) {
           size={35}
           color="white"
         />
-        <StickerOverlay />
+        <StickerOverlay showSticker={props.showSticker} />
       </TouchableOpacity>
 
       <TouchableOpacity>
