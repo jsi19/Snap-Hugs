@@ -1,7 +1,8 @@
+import React, { useState } from "react";
 import { StyleSheet, View, TouchableOpacity } from "react-native";
 import { Image, NativeBaseProvider, Center } from "native-base";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import React from "react";
+
 import Sticker from "../components/StickerComponent";
 
 import VideoComponent from "../components/VideoComponent";
@@ -43,54 +44,114 @@ export default function VideoReplayScreen(props) {
     showToast();
   };
 
-  return (
-    <NativeBaseProvider>
-      <VideoComponent
-        style={styles.videoPlayback}
-        videoSource={props.videoSource}
-      />
+  // Set sticker visibility
+  const [isStickerVisible, setStickerVisible] = useState(false);
 
-      {/* Options */}
-      <VideoReplayOptions />
+  const showSticker = () => {
+    setStickerVisible(true);
+  };
 
-      {/* Close view button*/}
-      <View style={styles.closeContainer}>
-        <TouchableOpacity
-          style={styles.close}
-          onPress={props.setVideoToUndefined}
-        >
-          <MaterialCommunityIcons name="close" size={25} color="white" />
-        </TouchableOpacity>
-      </View>
+  if (isStickerVisible) {
+    return (
+      <NativeBaseProvider>
+        <VideoComponent
+          style={styles.videoPlayback}
+          videoSource={props.videoSource}
+        />
 
-      {/* Bottom Buttons */}
-      <Center style={styles.bottomButtonsContainer}>
-        {/* Save button */}
-        <TouchableOpacity style={styles.saveButton} onPress={props.saveVideo}>
-          <MaterialCommunityIcons
-            name="tray-arrow-down"
-            size={30}
-            color="white"
-          />
-        </TouchableOpacity>
+        {/* Options */}
+        <VideoReplayOptions showSticker={showSticker} />
 
-        {/* Story button */}
-        <TouchableOpacity style={styles.storyButton}>
-          <Image style={styles.bitmoji} source={bitmoji} alt="bitmoji" />
-        </TouchableOpacity>
+        {/* Close view button*/}
+        <View style={styles.closeContainer}>
+          <TouchableOpacity
+            style={styles.close}
+            onPress={props.setVideoToUndefined}
+          >
+            <MaterialCommunityIcons name="close" size={25} color="white" />
+          </TouchableOpacity>
+        </View>
 
-        {/* Send to button */}
-        <TouchableOpacity style={styles.sendButton}>
-          <MaterialCommunityIcons name="send" size={30} color="#FFFC00" />
-          <SendToOverlay
-            showToastAndReturnToCameraScreen={showToastAndReturnToCameraScreen}
-          />
-        </TouchableOpacity>
-      </Center>
+        {/* Bottom Buttons */}
+        <Center style={styles.bottomButtonsContainer}>
+          {/* Save button */}
+          <TouchableOpacity style={styles.saveButton} onPress={props.saveVideo}>
+            <MaterialCommunityIcons
+              name="tray-arrow-down"
+              size={30}
+              color="white"
+            />
+          </TouchableOpacity>
 
-      <Sticker />
-    </NativeBaseProvider>
-  );
+          {/* Story button */}
+          <TouchableOpacity style={styles.storyButton}>
+            <Image style={styles.bitmoji} source={bitmoji} alt="bitmoji" />
+          </TouchableOpacity>
+
+          {/* Send to button */}
+          <TouchableOpacity style={styles.sendButton}>
+            <MaterialCommunityIcons name="send" size={30} color="#FFFC00" />
+            <SendToOverlay
+              showToastAndReturnToCameraScreen={
+                showToastAndReturnToCameraScreen
+              }
+            />
+          </TouchableOpacity>
+        </Center>
+
+        <Sticker />
+      </NativeBaseProvider>
+    );
+  } else {
+    return (
+      <NativeBaseProvider>
+        <VideoComponent
+          style={styles.videoPlayback}
+          videoSource={props.videoSource}
+        />
+
+        {/* Options */}
+        <VideoReplayOptions showSticker={showSticker} />
+
+        {/* Close view button*/}
+        <View style={styles.closeContainer}>
+          <TouchableOpacity
+            style={styles.close}
+            onPress={props.setVideoToUndefined}
+          >
+            <MaterialCommunityIcons name="close" size={25} color="white" />
+          </TouchableOpacity>
+        </View>
+
+        {/* Bottom Buttons */}
+        <Center style={styles.bottomButtonsContainer}>
+          {/* Save button */}
+          <TouchableOpacity style={styles.saveButton} onPress={props.saveVideo}>
+            <MaterialCommunityIcons
+              name="tray-arrow-down"
+              size={30}
+              color="white"
+            />
+          </TouchableOpacity>
+
+          {/* Story button */}
+          <TouchableOpacity style={styles.storyButton}>
+            <Image style={styles.bitmoji} source={bitmoji} alt="bitmoji" />
+          </TouchableOpacity>
+
+          {/* Send to button */}
+          <TouchableOpacity style={styles.sendButton}>
+            <MaterialCommunityIcons name="send" size={30} color="#FFFC00" />
+            <SendToOverlay
+              showToastAndReturnToCameraScreen={
+                showToastAndReturnToCameraScreen
+              }
+            />
+          </TouchableOpacity>
+        </Center>
+      </NativeBaseProvider>
+    );
+  }
 }
 
 const styles = StyleSheet.create({

@@ -31,14 +31,20 @@ import starTrekSymbol from "../../assets/sticker-overlay/icons8-star-trek-symbol
 import strawberry from "../../assets/sticker-overlay/icons8-strawberry-100.png";
 import sunflower from "../../assets/sticker-overlay/icons8-sunflower-100.png";
 import violet from "../../assets/sticker-overlay/icons8-violet-flower-100.png";
+import aDayInTheLife from "../../assets/sticker-overlay/a-day-in-the-life.png";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
-export default function StickerOverlay() {
+export default function StickerOverlay(props) {
   // Set modal visibility
   const [isModalVisible, setModalVisible] = useState(false);
 
   const hideModal = () => {
     setModalVisible(false);
+  };
+
+  const hideModalAndPlaceStickerOnVideoReplayScreen = () => {
+    hideModal();
+    props.showSticker();
   };
 
   return (
@@ -94,12 +100,19 @@ export default function StickerOverlay() {
               </TouchableOpacity>
             </HStack>
           </View>
+
           {/* Stickers */}
           <VStack style={styles.stickerContainer} space={7}>
             {/* Row 1 */}
             <HStack>
-              <TouchableOpacity>
-                <Image source={beach} alt="beach" style={styles.beach} />
+              <TouchableOpacity
+                onPress={hideModalAndPlaceStickerOnVideoReplayScreen}
+              >
+                <Image
+                  source={aDayInTheLife}
+                  alt="a day in the life"
+                  style={styles.aDayInTheLife}
+                />
               </TouchableOpacity>
               <TouchableOpacity>
                 <Image source={beach} alt="beach" style={styles.beach} />
@@ -281,5 +294,13 @@ const styles = StyleSheet.create({
   stickerContainer: {
     marginLeft: 10,
     marginTop: 10,
+  },
+
+  aDayInTheLife: {
+    transform: [{ rotate: "15deg" }],
+    marginTop: 10,
+    marginRight: 2,
+    width: 100,
+    height: 100,
   },
 });

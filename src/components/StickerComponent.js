@@ -1,4 +1,4 @@
-import sampleSticker from "../../assets/stickers/sample_sticker_tech.png";
+import aDayInTheLife from "../../assets/sticker-overlay/a-day-in-the-life.png";
 import Gestures from "react-native-easy-gestures-new";
 import React from "react";
 import { StyleSheet, Image } from "react-native";
@@ -13,7 +13,7 @@ export default function Sticker() {
         console.log(styles);
       }}
     >
-      <Image source={sampleSticker} style={styles.sticker} />
+      <Image source={aDayInTheLife} style={styles.sticker} />
     </Gestures>
   );
 }
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   sticker: {
     top: 400,
     left: 25,
-    width: 367,
-    height: 60,
+    width: 200,
+    height: 200,
   },
 });
