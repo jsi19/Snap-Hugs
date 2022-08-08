@@ -153,7 +153,7 @@ export default function SendToOverlay(props) {
               </Text>
               {/* Hugs boxes */}
               <VStack style={styles.storiesBoxes} space={1}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={props.setVideoToUndefined}>
                   <Center
                     h="50"
                     w="362"

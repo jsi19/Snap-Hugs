@@ -49,7 +49,7 @@ export default function VideoReplayScreen(props) {
         {/* Send to button */}
         <TouchableOpacity style={styles.sendButton}>
           <MaterialCommunityIcons name="send" size={30} color="#FFFC00" />
-          <SendToOverlay />
+          <SendToOverlay setVideoToUndefined={props.setVideoToUndefined} />
         </TouchableOpacity>
       </Center>
 
