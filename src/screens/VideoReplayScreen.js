@@ -8,8 +8,41 @@ import VideoComponent from "../components/VideoComponent";
 import VideoReplayOptions from "../components/VideoReplayOptions";
 import bitmoji from "../../assets/top_nav_bar/new_bitmoji.png";
 import SendToOverlay from "./SendToOverlay";
+import Toast from "react-native-root-toast";
 
 export default function VideoReplayScreen(props) {
+  // Toast
+  const showToast = () => {
+    Toast.show("Sent to Technology Hug!          ", {
+      duration: Toast.durations.LONG,
+      position: 45,
+      backgroundColor: "#A550A5",
+      textColor: "#fff",
+      opacity: 1,
+      shadow: false,
+      animation: true,
+      hideOnPress: true,
+      delay: 1200,
+      onShow: () => {
+        // calls on toast\`s appear animation start
+      },
+      onShown: () => {
+        // calls on toast\`s appear animation end.
+      },
+      onHide: () => {
+        // calls on toast\`s hide animation start.
+      },
+      onHidden: () => {
+        // calls on toast\`s hide animation end.
+      },
+    });
+  };
+
+  const showToastAndReturnToCameraScreen = () => {
+    props.setVideoToUndefined();
+    showToast();
+  };
+
   return (
     <NativeBaseProvider>
       <VideoComponent
@@ -49,7 +82,9 @@ export default function VideoReplayScreen(props) {
         {/* Send to button */}
         <TouchableOpacity style={styles.sendButton}>
           <MaterialCommunityIcons name="send" size={30} color="#FFFC00" />
-          <SendToOverlay setVideoToUndefined={props.setVideoToUndefined} />
+          <SendToOverlay
+            showToastAndReturnToCameraScreen={showToastAndReturnToCameraScreen}
+          />
         </TouchableOpacity>
       </Center>
 
