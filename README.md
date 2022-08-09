@@ -13,16 +13,20 @@ Introducing Snap Hugs, community pages where BIPOC youth can learn from other Pe
 
 By embracing ideas, role models, and resources for youth on Snapchat, we are evening the playing field and empowering disenfranchised communities.
 
+# App Experience
 
-# Our Team
+| Location in the App                    | Layout |
+|:--------------------------------------:|:-----------:|
+|![](http://g.recordit.co/4QByz3N3L8.gif)|![](http://g.recordit.co/4QByz3N3L8.gif)          |
 
-|         Name        |     Role    |                       LinkedIn                       |             GitHub            |
-|:-------------------:|:-----------:|------------------------------------------------------|-------------------------------|
-| Alexander Turnbough | Designer    | https://www.linkedin.com/in/alexander-turnbough0221/ |                               |
-| Ivy Ho              | Storyteller | http://linkedin.com/in/ivyho22/                      |                               |
-| Jonathan Si         | Engineer    | https://www.linkedin.com/in/jsi19/                   | https://github.com/jsi19      |
-| Safy Tesfay         | Storyteller | https://www.linkedin.com/in/surafuel-tesfay/         |                               |
-| Vanessa Malabanan   | Engineer    | https://www.linkedin.com/in/vanessamalabanan         | https://github.com/vmalabanan |
+Post a Story:
+| Add special sticker                    | Send to Hug | Result |
+|:--------------------------------------:|:-----------:|--------|
+|![](http://g.recordit.co/3zqpuCNBOo.gif)|             |        |
+
+
+
+## Screenshots
 
 
 # Run Project
@@ -36,6 +40,16 @@ yarn install
 expo start
 ```
 3. Install [Expo Go](https://expo.dev/client) from App/Play Store and scan the QR code to launch the applcation on your phone
+
+# Our Team
+
+|         Name        |     Role    |                       LinkedIn                       |             GitHub            |
+|:-------------------:|:-----------:|------------------------------------------------------|-------------------------------|
+| Alexander Turnbough | Designer    | https://www.linkedin.com/in/alexander-turnbough0221/ |                               |
+| Ivy Ho              | Storyteller | http://linkedin.com/in/ivyho22/                      |                               |
+| Jonathan Si         | Engineer    | https://www.linkedin.com/in/jsi19/                   | https://github.com/jsi19      |
+| Safy Tesfay         | Storyteller | https://www.linkedin.com/in/surafuel-tesfay/         |                               |
+| Vanessa Malabanan   | Engineer    | https://www.linkedin.com/in/vanessamalabanan         | https://github.com/vmalabanan |
 
 # Technologies
 
