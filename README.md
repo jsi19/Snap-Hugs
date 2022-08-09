@@ -23,3 +23,16 @@ By embracing ideas, role models, and resources for youth on Snapchat, we are eve
 | Jonathan Si         | Engineer    | https://www.linkedin.com/in/jsi19/                   | https://github.com/jsi19      |
 | Safy Tesfay         | Storyteller | https://www.linkedin.com/in/surafuel-tesfay/         |                               |
 | Vanessa Malabanan   | Engineer    | https://www.linkedin.com/in/vanessamalabanan         | https://github.com/vmalabanan |
+
+
+---
+# Technologies
+
+[React Native](https://reactnative.dev/) <br />
+[Expo](https://expo.dev/) <br />
+[Expo Camera](https://docs.expo.dev/versions/latest/sdk/camera/) <br />
+[Expo AV](https://docs.expo.dev/versions/v46.0.0/sdk/audio/) <br />
+[Native Base UI Components](https://nativebase.io/) <br />
+[React Native Gifted Chat](https://github.com/FaridSafi/react-native-gifted-chat) <br />
+[Google Firebase Firestore](https://firebase.google.com/docs/firestore) <br />
+[Google Firebase Authentication](https://firebase.google.com/docs/auth) <br />
