@@ -15,16 +15,19 @@ By embracing ideas, role models, and resources for youth on Snapchat, we are eve
 
 # App Experience
 
-| Location in the App                    | Layout |
-|:--------------------------------------:|:-----------:|
-|![](http://g.recordit.co/4QByz3N3L8.gif)|![](http://g.recordit.co/4QByz3N3L8.gif)          |
+| Location in the App                    | Layout                                 |
+|:--------------------------------------:|:--------------------------------------:|
+|![](http://g.recordit.co/4QByz3N3L8.gif)|![](http://g.recordit.co/eiRa5Fzmhh.gif)|
 
 Post a Story:
 | Add special sticker                    | Send to Hug | Result |
 |:--------------------------------------:|:-----------:|--------|
-|![](http://g.recordit.co/3zqpuCNBOo.gif)|             |        |
+|![](http://g.recordit.co/3zqpuCNBOo.gif)|![]()             |![]()         |
 
 
+| Industry Insights | Get Involved | Beta Testing |
+|:-----------------:|:------------:|--------------|
+|![]()                    |![]()               |![]()               |
 
 ## Screenshots
 
