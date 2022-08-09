@@ -15,19 +15,20 @@ By embracing ideas, role models, and resources for youth on Snapchat, we are eve
 
 # App Experience
 
+General:
 | Location in the App                    | Layout                                 |
 |:--------------------------------------:|:--------------------------------------:|
 |![](http://g.recordit.co/4QByz3N3L8.gif)|![](http://g.recordit.co/eiRa5Fzmhh.gif)|
 
 Post a Story:
-| Add special sticker                    | Send to Hug                            | Result |
-|:--------------------------------------:|:--------------------------------------:|--------|
-|![](http://g.recordit.co/3zqpuCNBOo.gif)|![](http://g.recordit.co/SnsnhcGnzZ.gif)|![](http://g.recordit.co/nlmSrSJQ4F.gif)         |
+| Add special sticker                    | Send to Hug                            | Result                                 |
+|:--------------------------------------:|:--------------------------------------:|----------------------------------------|
+|![](http://g.recordit.co/3zqpuCNBOo.gif)|![](http://g.recordit.co/SnsnhcGnzZ.gif)|![](http://g.recordit.co/nlmSrSJQ4F.gif)|
 
-
-| Industry Insights | Get Involved | Beta Testing |
-|:-----------------:|:------------:|--------------|
-|![]()                    |![]()               |![]()               |
+Breakdown of Hug Page:
+| Industry Insights                      | Get Involved                           | Beta Testing                           |
+|:--------------------------------------:|:--------------------------------------:|----------------------------------------|
+|![](http://g.recordit.co/L1hWrUW9Li.gif)|![](http://g.recordit.co/GL3WFNcHhi.gif)|![](http://g.recordit.co/6j5IcvZACH.gif)|
 
 ## Screenshots
 
