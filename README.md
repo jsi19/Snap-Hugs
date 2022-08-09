@@ -30,9 +30,6 @@ Breakdown of Hug Page:
 |:--------------------------------------:|:--------------------------------------:|----------------------------------------|
 |![](http://g.recordit.co/L1hWrUW9Li.gif)|![](http://g.recordit.co/GL3WFNcHhi.gif)|![](http://g.recordit.co/6j5IcvZACH.gif)|
 
-## Screenshots
-
-
 # Run Project
 1. In terminal, run:
 ```
