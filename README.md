@@ -13,7 +13,7 @@ Introducing Snap Hugs, community pages where BIPOC youth can learn from other Pe
 
 By embracing ideas, role models, and resources for youth on Snapchat, we are evening the playing field and empowering disenfranchised communities.
 
----
+
 # Our Team
 
 |         Name        |     Role    |                       LinkedIn                       |             GitHub            |
@@ -25,7 +25,18 @@ By embracing ideas, role models, and resources for youth on Snapchat, we are eve
 | Vanessa Malabanan   | Engineer    | https://www.linkedin.com/in/vanessamalabanan         | https://github.com/vmalabanan |
 
 
----
+# Run Project
+1. In terminal, run:
+```
+yarn install
+```
+
+2. Next, run:
+```
+expo start
+```
+3. Install [Expo Go](https://expo.dev/client) from App/Play Store and scan the QR code to launch the applcation on your phone
+
 # Technologies
 
 [React Native](https://reactnative.dev/) <br />
