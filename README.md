@@ -18,17 +18,18 @@ By embracing ideas, role models, and resources for youth on Snapchat, we are eve
 General:
 | Location in the App                    | Layout                                 |
 |:--------------------------------------:|:--------------------------------------:|
-|![](http://g.recordit.co/4QByz3N3L8.gif)|![](http://g.recordit.co/eiRa5Fzmhh.gif)|
+|[<img src="assets/Samples/hugs_location.gif" height="500"/>](https://github.com/jsi19/Snap-Hugs)|[<img src="assets/Samples/hugs_overview.gif" height="500"/>](https://github.com/jsi19/Snap-Hugs)|
+
+Breakdown of Hug Page:
+| Stories                           | Industry Insights                 | Get Involved                      | Beta Testing                      |
+|:---------------------------------:|:---------------------------------:|:---------------------------------:|:---------------------------------:|
+|[<img src="assets/Samples/hugs_stories.gif" height="500"/>](https://github.com/jsi19/Snap-Hugs)|[<img src="assets/Samples/hugs_insights.gif" height="500"/>](https://github.com/jsi19/Snap-Hugs)|[<img src="assets/Samples/hugs_partners.gif" height="500"/>](https://github.com/jsi19/Snap-Hugs)|[<img src="assets/Samples/hugs_beta.gif" height="500"/>](https://github.com/jsi19/Snap-Hugs)
 
 Post a Story:
 | Add special sticker                    | Send to Hug                            | Result                                 |
 |:--------------------------------------:|:--------------------------------------:|----------------------------------------|
 |![](http://g.recordit.co/3zqpuCNBOo.gif)|![](http://g.recordit.co/SnsnhcGnzZ.gif)|![](http://g.recordit.co/nlmSrSJQ4F.gif)|
 
-Breakdown of Hug Page:
-| Industry Insights                      | Get Involved                           | Beta Testing                           |
-|:--------------------------------------:|:--------------------------------------:|----------------------------------------|
-|![](http://g.recordit.co/L1hWrUW9Li.gif)|![](http://g.recordit.co/GL3WFNcHhi.gif)|![](http://g.recordit.co/6j5IcvZACH.gif)|
 
 # Run Project
 1. In terminal, run:
